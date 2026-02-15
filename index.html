@@ -36,6 +36,12 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="MalloPal">
 
+  <!-- App icon: favicon (search results), Apple touch, PWA -->
+  <link rel="icon" href="assets/app-icon.png" type="image/png" sizes="1024x1024">
+  <link rel="icon" href="assets/app-icon-180.png" type="image/png" sizes="180x180">
+  <link rel="apple-touch-icon" href="assets/app-icon-180.png" sizes="180x180">
+  <link rel="manifest" href="manifest.json">
+
   <link rel="stylesheet" href="styles.css">
 
   <!-- Structured Data (JSON-LD) for SEO -->
@@ -66,7 +72,8 @@
         "@type": "Organization",
         "@id": "https://mallopal.com/#organization",
         "name": "MalloPal",
-        "url": "https://mallopal.com/"
+        "url": "https://mallopal.com/",
+        "logo": { "@type": "ImageObject", "url": "https://mallopal.com/assets/app-icon.png" }
       },
       {
         "@type": "SoftwareApplication",
@@ -74,6 +81,7 @@
         "name": "Mallo",
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "iOS",
+        "image": "https://mallopal.com/assets/app-icon.png",
         "description": "Mallo is an AI companion that remembers you—what matters to you, what you shared—and checks in with you. Proactive check-ins, weekly recap, persistent memory. For anyone living alone, relocated, or working remotely.",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "author": { "@id": "https://mallopal.com/#organization" }
