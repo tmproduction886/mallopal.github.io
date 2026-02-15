@@ -1,5 +1,5 @@
-/* MalloPal landing page – Mallo brand colors & ICP-friendly design
-   Colors from app: primary #F5F0E8, secondary #D4C4B0, accent #8B6F47, pink #FFB6C1 */
+/* MalloPal landing page – mallopal.com – iOS app, ICP-focused, SEO-optimized
+   Brand: cream #F5F0E8, brown #D4C4B0, accent #8B6F47, pink #FFB6C1 */
 
 :root {
   --cream: #F5F0E8;
@@ -7,14 +7,15 @@
   --cream-light: #FAF8F3;
   --brown: #D4C4B0;
   --brown-dark: #8B6F47;
+  --brown-darker: #6B5339;
   --pink: #FFB6C1;
   --text: #2C2C2C;
-  --text-muted: #6B6B6B;
+  --text-muted: #5C5C5C;
   --white: #FFFFFF;
   --shadow: rgba(44, 44, 44, 0.08);
-  --shadow-strong: rgba(44, 44, 44, 0.12);
-  --radius: 16px;
-  --radius-sm: 10px;
+  --shadow-strong: rgba(44, 44, 44, 0.14);
+  --radius: 20px;
+  --radius-sm: 12px;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -24,7 +25,6 @@
   box-sizing: border-box;
 }
 
-/* Skip link – off-screen until focused (a11y + SEO) */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -60,7 +60,7 @@ body {
 }
 
 .wrap {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -69,13 +69,13 @@ body {
 .site-header {
   background: var(--white);
   border-bottom: 1px solid var(--cream-dark);
-  padding: 16px 0;
+  padding: 18px 0;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-.site-header .wrap {
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,7 +83,7 @@ body {
 
 .logo {
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.02em;
@@ -112,25 +112,51 @@ body {
 
 .cta-nav {
   color: var(--brown-dark) !important;
+  font-weight: 600;
 }
 
 .cta-nav:hover {
-  color: var(--text) !important;
+  color: var(--brown-darker) !important;
 }
 
-/* Hero */
+/* Hero – split layout: app visual + copy */
 .hero {
-  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-light) 100%);
-  padding: 64px 0 80px;
-  text-align: center;
+  background: linear-gradient(165deg, var(--cream) 0%, var(--cream-light) 50%, var(--brown) 100%);
+  padding: 48px 0 72px;
+  min-height: 0;
 }
 
 .hero-inner {
-  max-width: 720px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-visual {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 24px 48px var(--shadow-strong);
+}
+
+.hero-text {
+  order: 2;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-size: clamp(2rem, 4.5vw, 2.6rem);
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 20px;
@@ -138,23 +164,27 @@ body {
   color: var(--text);
 }
 
-.hero-tagline {
-  font-size: 1.1rem;
+.hero-lead {
+  font-size: 1.08rem;
   color: var(--text-muted);
-  margin: 0 0 32px;
+  margin: 0 0 28px;
   line-height: 1.65;
+}
+
+.hero-lead strong {
+  color: var(--text);
 }
 
 .hero-cta {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
 .btn {
   display: inline-block;
-  padding: 14px 28px;
+  padding: 16px 32px;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -168,8 +198,8 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px var(--shadow-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow-strong);
 }
 
 .hero-note {
@@ -177,50 +207,50 @@ body {
   color: var(--text-muted);
 }
 
-/* Problem / ICP section */
-.problem {
-  padding: 64px 0;
+/* Who it's for – ICP */
+.who {
+  padding: 72px 0;
   background: var(--white);
 }
 
 .section-title {
-  font-size: clamp(1.5rem, 4vw, 1.85rem);
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
   font-weight: 700;
   margin: 0 0 20px;
   color: var(--text);
   letter-spacing: -0.02em;
 }
 
-.problem-lead {
+.who-lead {
   font-size: 1.05rem;
   color: var(--text-muted);
   margin: 0 0 24px;
   max-width: 640px;
 }
 
-.problem-list {
+.who-list {
   margin: 0;
   padding-left: 1.25rem;
   color: var(--text-muted);
 }
 
-.problem-list li {
-  margin-bottom: 10px;
+.who-list li {
+  margin-bottom: 12px;
 }
 
-.problem-list strong {
+.who-list strong {
   color: var(--text);
 }
 
 /* Features */
 .features {
-  padding: 64px 0;
+  padding: 72px 0;
   background: var(--cream-light);
 }
 
 .features .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
 }
 
 .feature-grid {
@@ -228,28 +258,28 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
 
 .feature-card {
   background: var(--white);
-  padding: 28px 24px;
+  padding: 28px 26px;
   border-radius: var(--radius);
-  box-shadow: 0 4px 16px var(--shadow);
+  box-shadow: 0 4px 20px var(--shadow);
   border: 1px solid var(--cream-dark);
 }
 
 .feature-icon {
   font-size: 2rem;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .feature-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: var(--text);
 }
 
@@ -257,12 +287,12 @@ body {
   font-size: 0.95rem;
   color: var(--text-muted);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* How it works */
 .how {
-  padding: 64px 0;
+  padding: 72px 0;
   background: var(--white);
 }
 
@@ -287,10 +317,52 @@ body {
   color: var(--text);
 }
 
+/* FAQ */
+.faq {
+  padding: 72px 0;
+  background: var(--cream-light);
+}
+
+.faq .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.faq-item:first-child {
+  padding-top: 0;
+}
+
+.faq-item dt {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.faq-item dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
 /* Download CTA */
 .download {
-  padding: 72px 0 80px;
-  background: linear-gradient(180deg, var(--cream) 0%, var(--brown) 40%, var(--brown-dark) 100%);
+  padding: 80px 0 88px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--brown) 35%, var(--brown-dark) 100%);
   text-align: center;
 }
 
@@ -304,8 +376,8 @@ body {
 }
 
 .download-tagline {
-  font-size: 1.1rem;
-  opacity: 0.95;
+  font-size: 1.12rem;
+  opacity: 0.96;
   margin: 0 0 28px;
 }
 
@@ -319,11 +391,12 @@ body {
   height: 60px;
   width: auto;
   max-width: 180px;
+  margin: 0 auto;
 }
 
 /* Footer */
 .site-footer {
-  padding: 40px 0 32px;
+  padding: 44px 0 36px;
   background: var(--text);
   color: var(--cream);
   text-align: center;
@@ -338,7 +411,22 @@ body {
 .footer-tagline {
   font-size: 0.95rem;
   opacity: 0.9;
-  margin: 0 0 20px;
+  margin: 0 0 8px;
+}
+
+.footer-links {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0 0 16px;
+}
+
+.footer-links a {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
 .footer-legal {
@@ -355,28 +443,53 @@ body {
   margin: 0;
 }
 
-/* Mobile nav */
+/* Mobile – hero stacks, nav compacts */
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .hero-visual {
+    order: 0;
+  }
+
+  .hero-visual img {
+    max-width: 280px;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-cta {
+    align-items: center;
+  }
+
+  .hero {
+    padding: 40px 0 56px;
+  }
+}
+
 @media (max-width: 640px) {
   .nav {
-    gap: 18px;
+    gap: 16px;
   }
 
   .nav a {
     font-size: 0.9rem;
   }
 
-  .hero {
-    padding: 48px 0 64px;
-  }
-
-  .problem,
+  .who,
   .features,
-  .how {
-    padding: 48px 0;
+  .how,
+  .faq {
+    padding: 52px 0;
   }
 
   .download {
-    padding: 56px 0 64px;
+    padding: 60px 0 68px;
   }
 
   .feature-grid {
