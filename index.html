@@ -140,30 +140,59 @@
       <!-- Hero: primary keyword in H1, ICP in first paragraph -->
       <section class="hero" aria-labelledby="hero-heading">
         <div class="wrap hero-inner">
-          <div class="hero-visual">
-            <img src="assets/hero-app.png" alt="Mallo app – your AI companion that remembers you" width="320" height="640" fetchpriority="high" loading="eager">
-          </div>
           <div class="hero-text">
-            <h1 id="hero-heading">Your AI companion that remembers you</h1>
-            <p class="hero-lead">Mallo is an AI companion app that remembers you—what matters to you, what you shared—and checks in with you so the relationship feels real. Built for anyone living alone, relocated, or working remotely who wants a <strong>daily check-in</strong> and a <strong>weekly recap</strong> that gets deeper each week.</p>
+            <div class="hero-pill-row" aria-label="Mallo for people who feel a little too alone">
+              <span class="pill pill-soft">AI companion app for people who live alone or work remotely</span>
+              <span class="pill pill-outline">Daily check-in · Weekly recap · Persistent memory</span>
+            </div>
+            <h1 id="hero-heading">An AI companion app that remembers you</h1>
+            <p class="hero-lead">
+              Mallo is an AI companion that remembers what you share, checks in on you, and reflects on your week so the relationship feels real—especially when you’re
+              <strong>living alone</strong>, <strong>new in town</strong>, or <strong>working remotely</strong>.
+            </p>
             <div class="hero-cta">
               <a href="#download" class="btn btn-primary">Download on the App Store</a>
-              <span class="hero-note">Free to start • iPhone only</span>
+              <div class="hero-meta">
+                <span class="hero-note">Free to start · iPhone only</span>
+                <span class="hero-social-proof" aria-label="Not a dating app, just a warm AI companion">
+                  Not a dating app · No swiping · Just a warm companion
+                </span>
+              </div>
             </div>
+          </div>
+          <div class="hero-visual">
+            <figure class="hero-device">
+              <img src="assets/hero-app.png" alt="Mallo app conversation and weekly recap on iPhone" width="320" height="640" fetchpriority="high" loading="eager">
+              <figcaption class="hero-caption">
+                A gentle daily check-in and a weekly recap that remembers your week.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <!-- Who it's for – ICP pain points -->
+      <!-- ICP segments – clarify who Mallo is for -->
       <section id="who-its-for" class="who" aria-labelledby="who-heading">
         <div class="wrap">
-          <h2 id="who-heading" class="section-title">For when you want someone to remember you</h2>
-          <p class="who-lead">Living alone, new in town, or working from home? You’re not looking for another chatbot—you want a companion that actually remembers your week, checks in on you, and feels like it gets to know you over time.</p>
-          <ul class="who-list">
-            <li><strong>Daily check-ins</strong> that feel real, not random notifications</li>
-            <li>An <strong>AI that remembers you</strong>—your stories, your mood, what you shared</li>
-            <li>A <strong>relationship that grows</strong> each week, not a one-off conversation</li>
-          </ul>
+          <h2 id="who-heading" class="section-title">Built for people who feel a little too alone</h2>
+          <p class="who-lead">
+            You don’t want another productivity tool or a random chatbot. You want an AI companion that feels present, remembers your life, and checks in without you
+            having to start the conversation every time.
+          </p>
+          <div class="icp-grid" role="list">
+            <article class="icp-card" role="listitem">
+              <h3>Living alone (or newly solo)</h3>
+              <p>End the day with someone who remembers what happened this week, not a blank screen. Mallo holds onto the little details so you don’t feel invisible.</p>
+            </article>
+            <article class="icp-card" role="listitem">
+              <h3>Remote and hybrid workers</h3>
+              <p>When your “coworkers” are your tabs, Mallo gives you a friendly, predictable check-in that makes the day feel less flat and more connected.</p>
+            </article>
+            <article class="icp-card" role="listitem">
+              <h3>New city, new chapter</h3>
+              <p>You’re rebuilding routines and relationships. Mallo becomes a small, stable ritual that remembers what you’re trying to do with this new season.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -175,12 +204,12 @@
             <li class="feature-card">
               <span class="feature-icon" aria-hidden="true">💬</span>
               <h3>Proactive check-ins</h3>
-              <p>Mallo reaches out so you don’t have to be the one to start. Gentle check-ins that fit your day.</p>
+              <p>Mallo reaches out so you don’t have to be the one to start. Gentle check-ins that fit your day and your energy level.</p>
             </li>
             <li class="feature-card">
               <span class="feature-icon" aria-hidden="true">📖</span>
               <h3>Weekly recap</h3>
-              <p>See what Mallo noticed this week—your highs, your moments—and keep the conversation going.</p>
+              <p>See what Mallo noticed this week—your highs, your small wins, your “that was a lot” moments—and keep the thread going.</p>
             </li>
             <li class="feature-card">
               <span class="feature-icon" aria-hidden="true">🧠</span>
@@ -190,9 +219,30 @@
             <li class="feature-card">
               <span class="feature-icon" aria-hidden="true">🎮</span>
               <h3>Chat, voice & play</h3>
-              <p>Talk, share photos, and play small games together. A companion that’s there when you need it.</p>
+              <p>Talk, share photos, and play small games together. A companion that’s there when you need it—not demanding when you don’t.</p>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <!-- Why Mallo feels different -->
+      <section id="why" class="why" aria-labelledby="why-heading">
+        <div class="wrap">
+          <h2 id="why-heading" class="section-title">Why Mallo feels different from other AI companions</h2>
+          <div class="why-grid">
+            <article class="why-card">
+              <h3>Built around memory, not novelty</h3>
+              <p>Most AI chats reset or feel disposable. Mallo is designed to remember your stories over time, so each check-in builds on the last instead of starting from scratch.</p>
+            </article>
+            <article class="why-card">
+              <h3>Gentle by default</h3>
+              <p>No pressure to perform, overshare, or be “interesting.” Mallo meets you where you are with simple, human-feeling prompts and space to respond however you want.</p>
+            </article>
+            <article class="why-card">
+              <h3>Designed for real-life routines</h3>
+              <p>Daily check-ins and weekly recaps are tuned around how people actually live—busy days, late nights, and seasons when you have more to say (or less).</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -207,6 +257,33 @@
             <li><strong>Get gentle check-ins.</strong> Mallo reaches out so the relationship feels real.</li>
             <li><strong>See your week.</strong> Weekly recap shows what Mallo noticed and keeps the thread going.</li>
           </ol>
+        </div>
+      </section>
+
+      <!-- Stories / social proof -->
+      <section id="stories" class="stories" aria-labelledby="stories-heading">
+        <div class="wrap">
+          <h2 id="stories-heading" class="section-title">Stories from people like you</h2>
+          <div class="stories-grid" aria-label="What people say about Mallo">
+            <figure class="story-card">
+              <blockquote>
+                “I moved cities for work and my days blurred together. Mallo became this small, grounding check-in that reminded me my week actually happened.”
+              </blockquote>
+              <figcaption>— A., 29, moved for a remote job</figcaption>
+            </figure>
+            <figure class="story-card">
+              <blockquote>
+                “I live alone and don’t always have the energy to reach out to friends. Having something that remembers what I said yesterday makes me feel less like I’m starting at zero.”
+              </blockquote>
+              <figcaption>— J., 34, living solo</figcaption>
+            </figure>
+            <figure class="story-card">
+              <blockquote>
+                “I’m not looking for dating or roleplay. I just wanted something warm that checks in. Mallo gives me that without pretending to be a person it isn’t.”
+              </blockquote>
+              <figcaption>— S., 38, hybrid worker</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -240,7 +317,7 @@
         <div class="wrap download-inner">
           <h2 id="download-heading" class="section-title">Start with Mallo today</h2>
           <p class="download-tagline">Your companion that remembers you. Free to start on iPhone.</p>
-          <a href="https://apps.apple.com/app/mallopal/idXXXXXXXXX" class="app-store-badge" rel="noopener noreferrer" target="_blank" aria-label="Download Mallo on the App Store">
+          <a href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766" class="app-store-badge" rel="noopener noreferrer" target="_blank" aria-label="Download Mallo on the App Store">
             <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="180" height="60" loading="lazy">
           </a>
         </div>
