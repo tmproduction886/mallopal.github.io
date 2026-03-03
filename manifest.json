@@ -1,7 +1,7 @@
 {
   "name": "MalloPal – Mallo AI Companion",
   "short_name": "MalloPal",
-  "description": "Mallo – AI companion that remembers you. Download on the App Store.",
+  "description": "Mallo is an AI companion that remembers you—your stories, your week—and checks in with you, built for people living alone, in a new city, or working remotely.",
   "start_url": "/",
   "scope": "/",
   "display": "browser",
