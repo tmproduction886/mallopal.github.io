@@ -55,7 +55,10 @@ body {
   font-size: 18px;
   line-height: 1.6;
   color: var(--text);
-  background: var(--cream-light);
+  background:
+    radial-gradient(circle at top left, rgba(255, 182, 193, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(139, 111, 71, 0.16), transparent 55%),
+    var(--cream-light);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -67,12 +70,13 @@ body {
 
 /* Header */
 .site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--cream-dark);
-  padding: 18px 0;
+  background: rgba(250, 248, 243, 0.9);
+  border-bottom: 1px solid rgba(232, 224, 213, 0.7);
+  padding: 14px 0;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
+  backdrop-filter: blur(14px);
 }
 
 .header-inner {
@@ -121,38 +125,48 @@ body {
 
 /* Hero – split layout: app visual + copy */
 .hero {
-  background: linear-gradient(165deg, var(--cream) 0%, var(--cream-light) 50%, var(--brown) 100%);
-  padding: 48px 0 72px;
-  min-height: 0;
+  background: radial-gradient(circle at top right, rgba(139, 111, 71, 0.08), transparent 55%),
+              linear-gradient(180deg, #faf8f3 0%, #f5f0e8 55%, #ecdfcf 100%);
+  padding: 56px 0 80px;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 56px;
   align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 24px;
 }
 
 .hero-text {
   order: 1;
+  max-width: 560px;
+}
+
+.hero-kicker {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown-darker);
+  margin: 0 0 10px;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 4.5vw, 2.6rem);
+  font-size: clamp(2.2rem, 4.6vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   letter-spacing: -0.03em;
   color: var(--text);
 }
 
 .hero-lead {
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   color: var(--text-muted);
-  margin: 0 0 28px;
+  margin: 0 0 26px;
   line-height: 1.65;
 }
 
@@ -192,7 +206,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
 }
 
 .btn {
@@ -215,20 +229,41 @@ body {
   box-shadow: 0 8px 24px var(--shadow-strong);
 }
 
-.hero-note {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--brown-darker);
+  border: 1px solid rgba(139, 111, 71, 0.22);
 }
 
-.hero-meta {
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.hero-secondary-cta {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+}
+
+.hero-note {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.hero-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
-  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
 }
 
-.hero-social-proof {
-  font-size: 0.85rem;
+.badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(212, 196, 176, 0.7);
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
@@ -237,25 +272,71 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.hero-device {
-  margin: 0;
-  text-align: center;
+.hero-device-shell {
+  position: relative;
+  width: min(360px, 90%);
+  aspect-ratio: 9 / 18;
+  border-radius: 38px;
+  padding: 10px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(250, 245, 236, 0.9));
+  box-shadow:
+    0 20px 60px rgba(44, 44, 44, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
 }
 
-.hero-visual img {
+.hero-device-screen {
   width: 100%;
-  max-width: 320px;
-  height: auto;
-  border-radius: 28px;
-  box-shadow: 0 24px 48px var(--shadow-strong);
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #111;
 }
 
-.hero-caption {
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+.hero-device-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-floating-card {
+  position: absolute;
+  max-width: 230px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 40px rgba(44, 44, 44, 0.18);
+  border: 1px solid rgba(232, 224, 213, 0.9);
+}
+
+.hero-floating-card--checkin {
+  left: -18%;
+  top: 16%;
+}
+
+.hero-floating-card--recap {
+  right: -18%;
+  bottom: 10%;
+}
+
+.floating-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brown-darker);
+  margin: 0 0 4px;
+}
+
+.floating-body {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* Who it's for – ICP */
@@ -512,17 +593,53 @@ body {
   margin: 0 0 28px;
 }
 
-.app-store-badge {
-  display: inline-block;
+/* Download button – Apple-style, fully text-visible */
+.store-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.92);
+  color: #fff;
+  text-decoration: none;
   margin-bottom: 16px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
-.app-store-badge img {
-  display: block;
-  height: 60px;
-  width: auto;
-  max-width: 180px;
-  margin: 0 auto;
+.store-button:hover {
+  background: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+}
+
+.store-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.store-button-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.store-button-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+}
+
+.store-button-label {
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+.store-button-store {
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 /* Footer */
@@ -586,12 +703,9 @@ body {
     order: 0;
   }
 
-  .hero-visual img {
-    max-width: 280px;
-  }
-
   .hero-text {
     order: 1;
+    max-width: none;
   }
 
   .hero-cta {
@@ -604,6 +718,29 @@ body {
 
   .hero {
     padding: 40px 0 56px;
+    min-height: auto;
+  }
+
+  .hero-badges {
+    justify-content: center;
+  }
+
+  .hero-note {
+    text-align: center;
+  }
+
+  .hero-device-shell {
+    width: 68%;
+  }
+
+  .hero-floating-card--checkin {
+    left: -2%;
+    top: -6%;
+  }
+
+  .hero-floating-card--recap {
+    right: -2%;
+    bottom: -8%;
   }
 }
 
