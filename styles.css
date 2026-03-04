@@ -76,7 +76,13 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(14px);
+}
+
+@supports ((-webkit-backdrop-filter: blur(14px)) or (backdrop-filter: blur(14px))) {
+  .site-header {
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
 }
 
 .header-inner {
@@ -112,6 +118,14 @@ body {
 
 .nav a:hover {
   color: var(--text);
+}
+
+.nav a:focus-visible,
+.btn:focus-visible,
+.store-button:focus-visible,
+.back:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 3px;
 }
 
 .cta-nav {
@@ -273,6 +287,10 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.hero-visual picture {
+  display: block;
 }
 
 .hero-image {
@@ -560,6 +578,17 @@ body {
   text-align: center;
 }
 
+/* Reduce initial render cost for below-the-fold content
+   (apply to internal grids so anchor scrolling remains reliable) */
+.icp-grid,
+.feature-grid,
+.why-grid,
+.stories-grid,
+.faq-list {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
 .download-inner {
   color: var(--white);
 }
@@ -582,6 +611,7 @@ body {
   justify-content: center;
   gap: 10px;
   padding: 12px 22px;
+  min-height: 44px;
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.92);
   color: #fff;
@@ -727,12 +757,36 @@ body {
 }
 
 @media (max-width: 640px) {
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
   .nav {
-    gap: 16px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 12px;
   }
 
   .nav a {
     font-size: 0.9rem;
+    padding: 8px 10px;
+    min-height: 44px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(232, 224, 213, 0.9);
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .cta-nav {
+    background: rgba(139, 111, 71, 0.12) !important;
+    border-color: rgba(139, 111, 71, 0.22) !important;
   }
 
   .who,
@@ -750,5 +804,26 @@ body {
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav a {
+    font-size: 0.86rem;
+    padding: 7px 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

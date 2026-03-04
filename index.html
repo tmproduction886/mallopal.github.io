@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F5F0E8">
+  <meta name="color-scheme" content="light">
 
   <!-- Primary SEO – mallopal.com, iOS app, ICP keywords -->
   <title>Mallo – AI Companion That Remembers You | MalloPal – Daily Check-in Companion for iPhone</title>
@@ -17,7 +18,7 @@
   <meta property="og:url" content="https://mallopal.com/">
   <meta property="og:title" content="Mallo – AI Companion That Remembers You | MalloPal">
   <meta property="og:description" content="An AI companion that checks in, remembers your week, and grows with you. For anyone who wants to feel a little less alone. Download on the App Store.">
-  <meta property="og:image" content="https://mallopal.com/assets/hero-app.png">
+  <meta property="og:image" content="https://mallopal.com/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Mallo – AI companion that remembers you. Download on the App Store.">
@@ -29,7 +30,7 @@
   <meta name="twitter:url" content="https://mallopal.com/">
   <meta name="twitter:title" content="Mallo – AI Companion That Remembers You | MalloPal">
   <meta name="twitter:description" content="An AI companion that checks in, remembers your week, and grows with you. Download on the App Store.">
-  <meta name="twitter:image" content="https://mallopal.com/assets/hero-app.png">
+  <meta name="twitter:image" content="https://mallopal.com/assets/og-image.jpg">
   <meta name="twitter:image:alt" content="Mallo – AI companion that remembers you. Download on the App Store.">
 
   <!-- iOS / PWA hints -->
@@ -37,10 +38,24 @@
   <meta name="apple-mobile-web-app-title" content="MalloPal">
 
   <!-- App icon: favicon (search results), Apple touch, PWA -->
-  <link rel="icon" href="assets/app-icon.png" type="image/png" sizes="1024x1024">
-  <link rel="icon" href="assets/app-icon-180.png" type="image/png" sizes="180x180">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="apple-touch-icon" href="assets/app-icon-180.png" sizes="180x180">
   <link rel="manifest" href="manifest.json">
+
+  <link
+    rel="preload"
+    as="image"
+    href="assets/hero-mallo-companion-360.webp"
+    imagesrcset="
+      assets/hero-mallo-companion-360.webp 360w,
+      assets/hero-mallo-companion-720.webp 720w,
+      assets/hero-mallo-companion-1080.webp 1080w
+    "
+    imagesizes="(max-width: 768px) 68vw, 360px"
+    fetchpriority="high"
+  >
 
   <link rel="stylesheet" href="styles.css">
 
@@ -57,7 +72,7 @@
         "description": "Mallo is an AI companion app that remembers you and checks in with you. Built for people living alone, in a new city, or working remotely who want a small, real-feeling daily ritual. Daily check-ins, weekly recaps, and persistent memory. Free to start on iPhone.",
         "isPartOf": { "@id": "https://mallopal.com/#website" },
         "about": { "@id": "https://mallopal.com/#app" },
-        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://mallopal.com/assets/hero-app.png" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://mallopal.com/assets/og-image.jpg" },
         "breadcrumb": { "@id": "https://mallopal.com/#breadcrumb" }
       },
       {
@@ -73,7 +88,7 @@
         "@id": "https://mallopal.com/#organization",
         "name": "MalloPal",
         "url": "https://mallopal.com/",
-        "logo": { "@type": "ImageObject", "url": "https://mallopal.com/assets/app-icon.png" }
+        "logo": { "@type": "ImageObject", "url": "https://mallopal.com/assets/app-icon-512.png" }
       },
       {
         "@type": "SoftwareApplication",
@@ -81,7 +96,7 @@
         "name": "Mallo",
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "iOS",
-        "image": "https://mallopal.com/assets/app-icon.png",
+        "image": "https://mallopal.com/assets/app-icon-512.png",
         "description": "Mallo is an AI companion that remembers you—what matters to you, what you shared—and checks in with you so the relationship feels real. Proactive check-ins, weekly recaps, and persistent memory. For people living alone, in a new city, or working remotely.",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "author": { "@id": "https://mallopal.com/#organization" }
@@ -185,15 +200,36 @@
           </div>
 
           <div class="hero-visual" aria-hidden="true">
-            <img
-              src="assets/hero-mallo-companion.png"
-              alt=""
-              class="hero-image"
-              width="360"
-              height="720"
-              loading="eager"
-              fetchpriority="high"
-            >
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  assets/hero-mallo-companion-360.webp 360w,
+                  assets/hero-mallo-companion-720.webp 720w,
+                  assets/hero-mallo-companion-1080.webp 1080w
+                "
+                sizes="(max-width: 768px) 68vw, 360px"
+              >
+              <source
+                type="image/png"
+                srcset="
+                  assets/hero-mallo-companion-360.png 360w,
+                  assets/hero-mallo-companion-720.png 720w,
+                  assets/hero-mallo-companion-1080.png 1080w
+                "
+                sizes="(max-width: 768px) 68vw, 360px"
+              >
+              <img
+                src="assets/hero-mallo-companion-360.png"
+                alt=""
+                class="hero-image"
+                width="360"
+                height="720"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              >
+            </picture>
           </div>
         </div>
       </section>
