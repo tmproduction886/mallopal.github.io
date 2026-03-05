@@ -408,6 +408,16 @@ body {
   line-height: 1.55;
 }
 
+.tools-lead a {
+  color: var(--brown-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tools-lead a:hover {
+  text-decoration: underline;
+}
+
 .tools-grid {
   list-style: none;
   margin: 0;
@@ -1241,6 +1251,17 @@ body {
   border: 1px solid var(--cream-dark);
   box-shadow: 0 4px 20px var(--shadow);
   color: var(--text);
+}
+
+.daily-q-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.daily-q-actions .btn-secondary.daily-share {
+  text-decoration: none;
 }
 
 #daily-question-block .btn {

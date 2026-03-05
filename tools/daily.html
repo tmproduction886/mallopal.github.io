@@ -118,7 +118,14 @@
       fetch('daily-check-in-questions.json').then(function(r) { return r.json(); }).then(function(d) {
         var q = d.questions[index];
         if (!q) q = d.questions[0];
-        document.getElementById('daily-question-block').innerHTML = '<div class="daily-q" role="heading" aria-level="2">' + escapeHtml(q.question) + '</div><button type="button" class="btn btn-primary" id="show-response">See a thought</button>';
+        var shareText = q.question.length > 160 ? q.question.slice(0, 157) + '…' : q.question;
+        var shareUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText + " — Today's one question from Mallo. ") + '&url=' + encodeURIComponent('https://mallopal.com/tools/daily.html');
+        document.getElementById('daily-question-block').innerHTML =
+          '<div class="daily-q" role="heading" aria-level="2">' + escapeHtml(q.question) + '</div>' +
+          '<div class="daily-q-actions">' +
+          '<button type="button" class="btn btn-primary" id="show-response">See a thought</button> ' +
+          '<a href="' + shareUrl + '" class="btn btn-secondary daily-share" target="_blank" rel="noopener">Share today\'s question</a>' +
+          '</div>';
         document.getElementById('daily-response-block').innerHTML = '<div class="daily-response">' + escapeHtml(q.response) + '</div>';
         document.getElementById('daily-cta-block').innerHTML = '<h3>' + escapeHtml(d.meta.ctaHeadline) + '</h3><p>' + escapeHtml(d.meta.ctaBody) + '</p><a href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=daily&utm_medium=web&utm_campaign=tools" class="btn" rel="noopener noreferrer" target="_blank">' + escapeHtml(d.meta.ctaButton) + '</a>';
         document.getElementById('show-response').addEventListener('click', function() {
