@@ -116,7 +116,10 @@
       var appUrl = 'https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=wellbeing&utm_medium=web&utm_campaign=tools';
 
       function show(stepId) {
-        document.querySelectorAll('.wb-step').forEach(function(el) { el.classList.remove('active'); });
+        ['wb-intro', 'wb-questions', 'wb-result'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.classList.remove('active');
+        });
         var el = document.getElementById(stepId);
         if (el) el.classList.add('active');
       }
@@ -128,10 +131,16 @@
         return 'doing_ok';
       }
 
+      function updateProgress(currentOneBased) {
+        var el = document.getElementById('wb-progress');
+        if (el && data) el.textContent = 'Question ' + currentOneBased + ' of ' + data.questions.length;
+      }
+
       function renderQuestions() {
         var container = document.getElementById('wb-questions');
         if (!data || !container) return;
-        var html = '';
+        var total = data.questions.length;
+        var html = '<p class="tool-progress" id="wb-progress" aria-live="polite">Question 1 of ' + total + '</p>';
         data.questions.forEach(function(q, i) {
           html += '<div class="wb-step' + (i === 0 ? ' active' : '') + '" data-q="' + i + '">';
           html += '<p class="wb-q">' + escapeHtml(q.text) + '</p>';
@@ -164,6 +173,7 @@
             if (qIndex < data.questions.length - 1) {
               step.classList.remove('active');
               container.querySelector('[data-q="' + (qIndex + 1) + '"]').classList.add('active');
+              updateProgress(qIndex + 2);
             } else {
               var score = 0;
               for (var k in answers) score += (data.scoring[answers[k]] || 0);
@@ -183,6 +193,7 @@
             var qIndex = parseInt(step.dataset.q, 10);
             step.classList.remove('active');
             container.querySelector('[data-q="' + (qIndex - 1) + '"]').classList.add('active');
+            updateProgress(qIndex);
           });
         });
       }
