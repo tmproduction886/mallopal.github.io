@@ -59,6 +59,16 @@
 
   <link rel="stylesheet" href="styles.css">
 
+  <!-- Google tag (gtag.js) – replace IDs with your GA4 + Google Ads IDs -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSNCMJY4L8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GSNCMJY4L8');  // GA4 Measurement ID
+    gtag('config', 'AW-17993644455'); // Google Ads ID (optional; add when you have it)
+  </script>
+
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
@@ -422,6 +432,18 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Track App Store link clicks as conversion (use this event in Google Ads)
+    document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_to_app_store', {
+            event_category: 'engagement',
+            event_label: 'landing_page'
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
