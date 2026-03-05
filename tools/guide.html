@@ -27,6 +27,7 @@
 
   <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
   <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="apple-touch-icon" href="../assets/app-icon-180.png" sizes="180x180">
   <link rel="stylesheet" href="../styles.css">
 
@@ -59,34 +60,15 @@
     gtag('config', 'G-GSNCMJY4L8');
     gtag('config', 'AW-17993644455');
   </script>
-  <style>
-    .tool-page { padding: 24px 0 48px; }
-    .tool-breadcrumb { font-size: 0.9rem; margin-bottom: 20px; }
-    .tool-breadcrumb a { color: var(--text-muted); text-decoration: none; }
-    .tool-breadcrumb a:hover { text-decoration: underline; color: var(--brown-dark); }
-    .tool-wrap { max-width: 640px; margin: 0 auto; padding: 0 24px; }
-    .guide-intro h1 { font-size: clamp(1.5rem, 4vw, 1.85rem); margin: 0 0 12px; }
-    .guide-intro .lead { color: var(--text-muted); margin: 0 0 8px; line-height: 1.55; }
-    .guide-intro .note { font-size: 0.92rem; color: var(--text-muted); font-style: italic; margin-bottom: 32px; }
-    .guide-day { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--cream-dark); }
-    .guide-day:last-of-type { border-bottom: none; }
-    .guide-day h2 { font-size: 1.2rem; margin: 0 0 12px; color: var(--brown-darker); }
-    .guide-day .task { font-size: 1.02rem; line-height: 1.6; margin-bottom: 12px; }
-    .guide-day .why { font-size: 0.95rem; color: var(--text-muted); line-height: 1.55; padding-left: 1em; border-left: 3px solid var(--brown); }
-    .tool-cta { margin-top: 40px; padding: 24px; background: var(--cream-light); border-radius: var(--radius); border: 1px solid var(--cream-dark); }
-    .tool-cta h3 { font-size: 1.1rem; margin: 0 0 8px; }
-    .tool-cta p { margin: 0 0 16px; font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
-    .tool-cta .btn { display: inline-block; padding: 14px 28px; background: var(--brown-dark); color: var(--white); font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; }
-    .tool-cta .btn:hover { opacity: 0.95; }
-  </style>
 </head>
 <body class="tool-page">
   <a href="#main" class="skip-link">Skip to main content</a>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="wrap header-inner">
       <a href="../" class="logo" aria-label="MalloPal home">MalloPal</a>
-      <nav class="nav">
+      <nav class="nav" role="navigation" aria-label="Main">
         <a href="../#tools">Free tools</a>
+        <a href="../#articles">Articles</a>
         <a href="../#features">Features</a>
         <a href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=guide&utm_medium=web&utm_campaign=tools" class="cta-nav" rel="noopener noreferrer" target="_blank">Get Mallo</a>
       </nav>
@@ -103,6 +85,7 @@
         <h1>Your first 7 days in a new city</h1>
         <p class="lead">A practical guide for anyone who just moved—and wants the first week to feel less like chaos and more like a real start. One small thing per day.</p>
         <p class="note">You don't have to do every task. Pick what fits. The goal is to give yourself a few anchors so that by Day 7, the new place feels a little more like yours.</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0 0 8px;">Share this guide: <a href="https://mallopal.com/tools/guide.html" style="color: var(--brown-dark);">mallopal.com/tools/guide</a> · <a href="../articles/first-week-new-city-by-region.html" style="color: var(--brown-dark);">First week by region (US, UK, abroad)</a></p>
       </header>
 
       <section class="guide-day" aria-labelledby="day1">
@@ -155,20 +138,32 @@
     </article>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="wrap">
+      <p class="footer-brand">MalloPal</p>
+      <p class="footer-tagline">Mallo – AI companion that remembers you.</p>
       <p class="footer-links">
         <a href="../">Home</a>
         <span aria-hidden="true"> · </span>
         <a href="../#tools">Free tools</a>
         <span aria-hidden="true"> · </span>
-        <a href="../privacy/">Privacy</a>
+        <a href="../#articles">Articles</a>
         <span aria-hidden="true"> · </span>
-        <a href="../terms/">Terms</a>
+        <a href="../privacy/">Privacy Policy</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../terms/">Terms of Service</a>
       </p>
-      <p class="footer-copy">&copy; <span id="year"></span> MalloPal. Mallo – AI companion that remembers you.</p>
+      <p class="footer-legal">Not a substitute for professional mental health or medical care. If you are in crisis, please contact a qualified professional or emergency services.</p>
+      <p class="footer-copy">&copy; <span id="year"></span> MalloPal. All rights reserved.</p>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        if (typeof gtag === 'function') gtag('event', 'click_to_app_store', { event_category: 'engagement', event_label: 'tool_guide' });
+      });
+    });
+  </script>
 </body>
 </html>

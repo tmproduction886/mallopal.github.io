@@ -83,12 +83,13 @@
 
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <a href="/" class="logo" aria-label="MalloPal home">MalloPal</a>
+      <a href="../" class="logo" aria-label="MalloPal home">MalloPal</a>
       <nav class="nav" role="navigation" aria-label="Main">
-        <a href="/">Home</a>
-        <a href="/#who-its-for">Who it’s for</a>
-        <a href="/#features">Features</a>
-        <a href="/#download">Get Mallo</a>
+        <a href="../">Home</a>
+        <a href="../#tools">Free tools</a>
+        <a href="../#articles">Articles</a>
+        <a href="../#features">Features</a>
+        <a href="../#download">Get Mallo</a>
       </nav>
     </div>
   </header>
@@ -115,7 +116,7 @@
         <li>Why loneliness is so common for people who are technically “fine on paper”.</li>
         <li>Why it’s surprisingly hard to talk about, even with close friends.</li>
         <li>How small rituals—walks, voice notes, AI companions—can make your days feel less flat.</li>
-        <li>Where something like <a href="/" style="color: var(--brown-dark); font-weight: 600; text-decoration: none;">Mallo</a> fits in (and where it doesn’t).</li>
+        <li>Where something like <a href="../" style="color: var(--brown-dark); font-weight: 600; text-decoration: none;">Mallo</a> fits in (and where it doesn’t).</li>
       </ul>
 
       <hr style="border: none; border-top: 1px solid var(--cream-dark); margin: 28px 0;">
@@ -236,7 +237,8 @@
 
       <p style="margin: 0 0 32px;">
         <a
-          href="/#download"
+          href="../#download"
+          class="cta-download-app"
           style="display: inline-block; padding: 14px 28px; border-radius: 999px; background: var(--brown-dark); color: #fff; font-weight: 600; text-decoration: none; font-size: 0.98rem;"
         >
           Get Mallo on iPhone
@@ -255,15 +257,26 @@
       <p class="footer-brand">MalloPal</p>
       <p class="footer-tagline">Mallo – AI companion that remembers you.</p>
       <p class="footer-links">
-        <a href="/privacy/">Privacy Policy</a>
+        <a href="../privacy/">Privacy</a>
         <span aria-hidden="true"> · </span>
-        <a href="/terms/">Terms of Service</a>
+        <a href="../terms/">Terms</a>
+        <span aria-hidden="true"> · </span>
+        <a href="holiday-loneliness-when-youre-alone-or-far-from-family.html">Holiday loneliness</a>
+        <span aria-hidden="true"> · </span>
+        <a href="first-week-new-city-by-region.html">First week by region</a>
       </p>
       <p class="footer-legal">Not a substitute for professional mental health or medical care. If you are in crisis, please contact a qualified professional or emergency services.</p>
       <p class="footer-copy">© <span id="year"></span> MalloPal. All rights reserved.</p>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        if (typeof gtag === 'function') gtag('event', 'click_to_app_store', { event_category: 'engagement', event_label: 'article_loneliness' });
+      });
+    });
+  </script>
 </body>
 </html>
 
