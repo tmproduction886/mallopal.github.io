@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "title": "Today's One Question | Mallo – Free Daily Check-in",
+    "description": "One gentle question to pause and notice how you are. No signup. Different question every day. From the team behind Mallo.",
+    "slug": "daily-question",
+    "intro": "One question. No account. Just a moment to pause.",
+    "ctaHeadline": "Want this every day—and someone who remembers your answer?",
+    "ctaBody": "In the app, Mallo asks you one thing at a time, remembers what you shared, and checks in on you so you're not always the one starting the conversation. Same vibe—every day, and it grows with you.",
+    "ctaButton": "Try Mallo (free to start)"
+  },
+  "questions": [
+    {
+      "id": "1",
+      "question": "What's one small thing that went okay today—even if the rest felt messy?",
+      "response": "Noticing one thing counts. You don't have to fix everything to have done something right.",
+      "theme": "win"
+    },
+    {
+      "id": "2",
+      "question": "Who's one person you're glad exists in your life right now?",
+      "response": "They don't have to know. Just naming them is enough.",
+      "theme": "connection"
+    },
+    {
+      "id": "3",
+      "question": "What did you need more of today—rest, movement, or someone to talk to?",
+      "response": "Knowing what you need is the first step. You're allowed to want it.",
+      "theme": "need"
+    },
+    {
+      "id": "4",
+      "question": "If you could describe today in one word, what would it be?",
+      "response": "One word is enough. You don't owe anyone a full report.",
+      "theme": "reflect"
+    },
+    {
+      "id": "5",
+      "question": "What's something you're looking forward to—even if it's small or far away?",
+      "response": "Looking forward is a kind of hope. It matters.",
+      "theme": "hope"
+    },
+    {
+      "id": "6",
+      "question": "What would make tomorrow feel a little easier?",
+      "response": "One thing. You don't have to solve the whole week—just one thing.",
+      "theme": "ease"
+    },
+    {
+      "id": "7",
+      "question": "When did you last take a real break—no screen, no task—even for five minutes?",
+      "response": "If it's been a while, that's information, not a verdict. Tomorrow is a new chance.",
+      "theme": "rest"
+    },
+    {
+      "id": "8",
+      "question": "What's one thing you'd want a friend to ask you about right now?",
+      "response": "Sometimes we just need someone to ask. You're allowed to want that.",
+      "theme": "connection"
+    },
+    {
+      "id": "9",
+      "question": "What are you proud of from this week—even if it feels small?",
+      "response": "Small counts. You showed up. That's worth naming.",
+      "theme": "win"
+    },
+    {
+      "id": "10",
+      "question": "What's weighing on you that you haven't said out loud yet?",
+      "response": "You don't have to fix it right now. Naming it is already something.",
+      "theme": "honesty"
+    },
+    {
+      "id": "11",
+      "question": "What made you smile or laugh recently—even briefly?",
+      "response": "Brief still counts. Joy doesn't have to last hours to be real.",
+      "theme": "joy"
+    },
+    {
+      "id": "12",
+      "question": "If your body could say one thing to you right now, what would it be?",
+      "response": "Listening to your body isn't selfish. It's how you show up for yourself.",
+      "theme": "body"
+    },
+    {
+      "id": "13",
+      "question": "What's one boundary you want to keep this week?",
+      "response": "Boundaries aren't mean. They're how you stay enough for yourself.",
+      "theme": "boundary"
+    },
+    {
+      "id": "14",
+      "question": "What do you wish someone had said to you today?",
+      "response": "Sometimes we have to say it to ourselves first. You're allowed to need that.",
+      "theme": "need"
+    },
+    {
+      "id": "15",
+      "question": "What's one thing you're grateful for that has nothing to do with productivity?",
+      "response": "You don't have to earn rest or joy. Gratitude can be for the small, useless things too.",
+      "theme": "gratitude"
+    }
+  ],
+  "usageNote": "Rotate by day-of-year or hash of (date + slug) so the same calendar day shows the same question for everyone. Example: index = (dayOfYear + 0) % questions.length for consistent daily rotation."
+}

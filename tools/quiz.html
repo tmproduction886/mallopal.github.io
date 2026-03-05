@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mallopal.com/tools/quiz.html">
+
+  <title>Is an AI Companion Right for You? Free Quiz | Mallo – Living Alone, Remote Work, New City</title>
+  <meta name="description" content="Take a free 5-question quiz to see if a daily AI companion fits your life. For people living alone, working remotely, or in a new city. No signup. Get your result in under a minute. By Mallo.">
+  <meta name="keywords" content="AI companion quiz, should I get an AI companion, AI friend quiz, companion app for loneliness, living alone quiz, remote work companion, new city loneliness, Mallo quiz">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mallopal.com/tools/quiz.html">
+  <meta property="og:title" content="Is an AI Companion Right for You? Free Quiz | Mallo">
+  <meta property="og:description" content="Five honest questions. No signup. Find out if a daily AI companion that remembers you fits your life. For anyone living alone, remote, or in a new city.">
+  <meta property="og:image" content="https://mallopal.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="MalloPal">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mallopal.com/tools/quiz.html">
+  <meta name="twitter:title" content="Is an AI Companion Right for You? Free Quiz | Mallo">
+  <meta name="twitter:description" content="Five questions. No signup. See if a daily AI companion fits your life. By Mallo.">
+  <meta name="twitter:image" content="https://mallopal.com/assets/og-image.jpg">
+
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/app-icon-180.png" sizes="180x180">
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "Is an AI Companion Right for You?",
+    "description": "A short quiz to see if a daily AI companion fits your life. For people living alone, working remotely, or in a new city. No signup.",
+    "url": "https://mallopal.com/tools/quiz.html",
+    "publisher": { "@type": "Organization", "name": "MalloPal", "url": "https://mallopal.com/" },
+    "about": { "@type": "SoftwareApplication", "name": "Mallo", "applicationCategory": "LifestyleApplication" }
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSNCMJY4L8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GSNCMJY4L8');
+    gtag('config', 'AW-17993644455');
+  </script>
+  <style>
+    .tool-page { padding: 24px 0 48px; }
+    .tool-breadcrumb { font-size: 0.9rem; margin-bottom: 20px; }
+    .tool-breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .tool-breadcrumb a:hover { text-decoration: underline; color: var(--brown-dark); }
+    .tool-wrap { max-width: 620px; margin: 0 auto; padding: 0 24px; }
+    .quiz-intro h1 { font-size: clamp(1.5rem, 4vw, 1.85rem); margin: 0 0 10px; }
+    .quiz-intro p { color: var(--text-muted); margin: 0 0 24px; }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+    .quiz-q { font-size: 1.12rem; font-weight: 600; margin-bottom: 18px; line-height: 1.45; }
+    .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+    .quiz-opt { display: block; width: 100%; text-align: left; padding: 14px 18px; border: 1px solid var(--cream-dark); background: var(--white); border-radius: var(--radius-sm); cursor: pointer; font-size: 0.98rem; line-height: 1.45; transition: border-color 0.15s, background 0.15s; }
+    .quiz-opt:hover { border-color: var(--brown); background: var(--cream-light); }
+    .quiz-opt[aria-pressed="true"] { border-color: var(--brown-dark); background: rgba(139, 111, 71, 0.08); }
+    .quiz-nav { margin-top: 28px; display: flex; gap: 12px; align-items: center; }
+    .quiz-result { padding: 28px 0; }
+    .quiz-result h2 { font-size: 1.35rem; margin: 0 0 16px; }
+    .quiz-result .body { white-space: pre-line; color: var(--text); line-height: 1.65; margin-bottom: 16px; }
+    .quiz-result .tip { padding: 14px 18px; background: rgba(139, 111, 71, 0.08); border-radius: var(--radius-sm); font-size: 0.95rem; margin-bottom: 24px; }
+    .share-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 28px; }
+    .share-bar button, .share-bar a { padding: 10px 18px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; border: 1px solid var(--brown); background: var(--cream-light); color: var(--brown-darker); }
+    .share-bar button:hover, .share-bar a:hover { background: var(--brown); color: var(--white); }
+    .tool-cta { margin-top: 32px; padding: 24px; background: var(--cream-light); border-radius: var(--radius); border: 1px solid var(--cream-dark); }
+    .tool-cta h3 { font-size: 1.1rem; margin: 0 0 8px; }
+    .tool-cta p { margin: 0 0 16px; font-size: 0.95rem; color: var(--text-muted); }
+    .tool-cta .btn { display: inline-block; padding: 14px 28px; background: var(--brown-dark); color: var(--white); font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; }
+    .tool-cta .btn:hover { opacity: 0.95; }
+  </style>
+</head>
+<body class="tool-page">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="../" class="logo" aria-label="MalloPal home">MalloPal</a>
+      <nav class="nav">
+        <a href="../#tools">Free tools</a>
+        <a href="../#features">Features</a>
+        <a href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=quiz&utm_medium=web&utm_campaign=tools" class="cta-nav" rel="noopener noreferrer" target="_blank">Get Mallo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="tool-wrap" role="main">
+    <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> → <a href="../#tools">Free tools</a> → <span aria-current="page">Quiz</span>
+    </nav>
+
+    <div id="quiz-root">
+      <div id="quiz-intro" class="quiz-step active">
+        <div class="quiz-intro">
+          <h1>Is an AI companion right for you?</h1>
+          <p>Five quick questions. No signup. Your answers stay on this page—we don’t store them.</p>
+          <button type="button" class="btn btn-primary" id="quiz-start">Start the quiz</button>
+        </div>
+      </div>
+      <div id="quiz-questions" class="quiz-step"></div>
+      <div id="quiz-result" class="quiz-step"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-links">
+        <a href="../">Home</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../#tools">Free tools</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../privacy/">Privacy</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../terms/">Terms</a>
+      </p>
+      <p class="footer-copy">&copy; <span id="year"></span> MalloPal. Mallo – AI companion that remembers you.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var Q = (function() {
+      var data = null;
+      var current = 0;
+      var answers = {};
+      var appUrl = 'https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=quiz&utm_medium=web&utm_campaign=tools';
+
+      function show(stepId) {
+        document.querySelectorAll('.quiz-step').forEach(function(el) { el.classList.remove('active'); });
+        var el = document.getElementById(stepId);
+        if (el) el.classList.add('active');
+      }
+
+      function getResultId(score) {
+        if (score >= 8) return 'strong_fit';
+        if (score >= 5) return 'good_fit';
+        return 'curious';
+      }
+
+      function renderQuestions() {
+        var container = document.getElementById('quiz-questions');
+        if (!data || !container) return;
+        var html = '';
+        data.questions.forEach(function(q, i) {
+          html += '<div class="quiz-step' + (i === 0 ? ' active' : '') + '" data-q="' + i + '">';
+          html += '<p class="quiz-q">' + escapeHtml(q.text) + '</p>';
+          html += '<div class="quiz-options" role="group" aria-label="Choose one">';
+          q.options.forEach(function(opt) {
+            html += '<button type="button" class="quiz-opt" data-value="' + escapeHtml(opt.value) + '" aria-pressed="false">' + escapeHtml(opt.label) + '</button>';
+          });
+          html += '</div>';
+          html += '<div class="quiz-nav">';
+          if (i > 0) html += '<button type="button" class="btn btn-secondary" data-prev>Back</button>';
+          html += '<button type="button" class="btn btn-primary" data-next style="' + (i === 0 ? '' : 'display:none') + '">Next</button>';
+          html += '</div></div>';
+        });
+        container.innerHTML = html;
+
+        container.querySelectorAll('.quiz-opt').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var step = btn.closest('[data-q]');
+            var qIndex = parseInt(step.dataset.q, 10);
+            var val = btn.dataset.value;
+            data.questions[qIndex].options.forEach(function(o) {
+              if (o.value === val) answers['q' + (qIndex + 1)] = val;
+            });
+            step.querySelectorAll('.quiz-opt').forEach(function(b) { b.setAttribute('aria-pressed', 'false'); });
+            btn.setAttribute('aria-pressed', 'true');
+            step.querySelector('[data-next]').style.display = 'inline-block';
+          });
+        });
+
+        container.querySelectorAll('[data-next]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var step = btn.closest('[data-q]');
+            var qIndex = parseInt(step.dataset.q, 10);
+            if (qIndex < data.questions.length - 1) {
+              step.classList.remove('active');
+              container.querySelector('[data-q="' + (qIndex + 1) + '"]').classList.add('active');
+            } else {
+              var score = 0;
+              for (var k in answers) score += (data.scoring[answers[k]] || 0);
+              var resultId = getResultId(score);
+              renderResult(resultId);
+              show('quiz-result');
+              if (typeof gtag === 'function') gtag('event', 'quiz_complete', { event_category: 'tools', event_label: resultId });
+              var url = window.location.pathname + '?result=' + resultId;
+              if (window.history && window.history.replaceState) window.history.replaceState({}, '', url);
+            }
+          });
+        });
+
+        container.querySelectorAll('[data-prev]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var step = btn.closest('[data-q]');
+            var qIndex = parseInt(step.dataset.q, 10);
+            step.classList.remove('active');
+            container.querySelector('[data-q="' + (qIndex - 1) + '"]').classList.add('active');
+          });
+        });
+      }
+
+      function renderResult(resultId) {
+        var res = data.results.find(function(r) { return r.id === resultId; });
+        if (!res) return;
+        var container = document.getElementById('quiz-result');
+        var body = (res.body || '').replace(/\n\n/g, '\n');
+        var shareUrl = 'https://mallopal.com/tools/quiz.html?result=' + resultId;
+        container.innerHTML =
+          '<div class="quiz-result">' +
+          '<h2>' + escapeHtml(res.headline) + '</h2>' +
+          '<p class="body">' + escapeHtml(body) + '</p>' +
+          (res.tip ? '<p class="tip">' + escapeHtml(res.tip) + '</p>' : '') +
+          '<div class="share-bar">' +
+          '<button type="button" id="share-copy">Copy my result link</button>' +
+          '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(res.shareText || res.headline) + '&url=' + encodeURIComponent(shareUrl) + '" target="_blank" rel="noopener">Share on X</a>' +
+          '</div>' +
+          '<div class="tool-cta">' +
+          '<h3>' + escapeHtml(data.meta.ctaHeadline) + '</h3>' +
+          '<p>' + escapeHtml(res.ctaEmphasis) + ' ' + escapeHtml(data.meta.ctaSubline) + '</p>' +
+          '<a href="' + appUrl + '" class="btn" rel="noopener noreferrer" target="_blank">' + escapeHtml(data.meta.ctaButton) + '</a>' +
+          '</div></div>';
+        document.getElementById('share-copy').addEventListener('click', function() {
+          navigator.clipboard.writeText(shareUrl).then(function() {
+            this.textContent = 'Copied!';
+          }.bind(this));
+        });
+      }
+
+      function escapeHtml(s) {
+        if (!s) return '';
+        var d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+      }
+
+      function init() {
+        var params = new URLSearchParams(window.location.search);
+        var resultParam = params.get('result');
+        if (resultParam && (resultParam === 'strong_fit' || resultParam === 'good_fit' || resultParam === 'curious')) {
+          fetch('quiz-is-ai-companion-right-for-you.json').then(function(r) { return r.json(); }).then(function(d) {
+            data = d;
+            renderResult(resultParam);
+            show('quiz-result');
+          }).catch(function() { show('quiz-intro'); });
+          return;
+        }
+        fetch('quiz-is-ai-companion-right-for-you.json').then(function(r) { return r.json(); }).then(function(d) {
+          data = d;
+          renderQuestions();
+          document.getElementById('quiz-start').addEventListener('click', function() {
+            show('quiz-questions');
+          });
+        }).catch(function() {
+          document.getElementById('quiz-intro').innerHTML = '<p>Unable to load the quiz. <a href="../#tools">Back to free tools</a>.</p>';
+        });
+      }
+
+      return { init: init };
+    })();
+    Q.init();
+  </script>
+</body>
+</html>

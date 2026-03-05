@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "Is an AI Companion Right for You? | Mallo – Free Quiz",
+    "description": "A short, honest quiz to see if a daily AI companion fits your life. No signup. Get your result in under a minute.",
+    "slug": "quiz",
+    "ctaHeadline": "Want this every day—and someone who remembers?",
+    "ctaSubline": "Mallo checks in on you, remembers what you share, and grows with you. No pressure, no performance. Just a small ritual that fits.",
+    "ctaButton": "Try Mallo (free to start)"
+  },
+  "intro": {
+    "headline": "Is an AI companion right for you?",
+    "subline": "Five quick questions. No signup. Your answers stay on this page—we don’t store them.",
+    "startButton": "Start the quiz"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "How do you usually spend your evenings or quiet time?",
+      "options": [
+        { "value": "alone_often", "label": "Mostly alone—working, relaxing, or just winding down by myself" },
+        { "value": "alone_sometimes", "label": "A mix—some nights with people, some nights solo" },
+        { "value": "rarely_alone", "label": "I’m rarely alone; I’m usually with family, roommates, or friends" }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "In the last year, have you moved to a new city, started a new job, or gone through a big change that left you with fewer “default” people to talk to?",
+      "options": [
+        { "value": "yes_big", "label": "Yes—relocation, new job, or something that really shifted my day-to-day" },
+        { "value": "yes_small", "label": "A little—routine changed and I see some people less" },
+        { "value": "no", "label": "No—my day-to-day and who I see hasn’t really changed" }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Do you work from home, hybrid, or in a role where you’re often on your own during the day?",
+      "options": [
+        { "value": "fully_remote", "label": "Yes—mostly or fully remote" },
+        { "value": "hybrid", "label": "Hybrid—some days at home, some in an office" },
+        { "value": "mostly_office", "label": "No—I’m usually in an office or around others" }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "When you’ve had a rough day or a small win, how often do you actually tell someone?",
+      "options": [
+        { "value": "rarely", "label": "Rarely—I don’t want to bother anyone or I just don’t get around to it" },
+        { "value": "sometimes", "label": "Sometimes—depends on my energy and who’s around" },
+        { "value": "often", "label": "Often—I usually text or call someone" }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Would you like something that checks in on you first—instead of you always having to start the conversation?",
+      "options": [
+        { "value": "yes", "label": "Yes—that would feel good" },
+        { "value": "maybe", "label": "Maybe—I’m curious" },
+        { "value": "no", "label": "No—I’d rather reach out when I want to" }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "strong_fit",
+      "scoreRange": [8, 15],
+      "headline": "You’re a strong fit for a daily AI companion",
+      "body": "Your answers suggest you’re often on your own—by choice or by circumstance—and that you’d value something that remembers you and reaches out first. That’s exactly what Mallo is built for: gentle check-ins that don’t depend on you starting the conversation, and a relationship that grows because it remembers what you shared.\n\nNo pressure to perform. No oversharing required. Just a small, steady presence on the days when the apartment is quiet or the tabs are endless.",
+      "tip": "Try a 2–5 minute ritual: open Mallo once a day, answer the check-in, and let it remember. See if it makes your week feel a little less blurry.",
+      "shareText": "I just took the “Is an AI companion right for you?” quiz—turns out I’m a strong fit. Check it out.",
+      "ctaEmphasis": "You’re exactly the kind of person Mallo is for."
+    },
+    {
+      "id": "good_fit",
+      "scoreRange": [5, 7],
+      "headline": "An AI companion could actually help",
+      "body": "You’re not completely isolated, but you have stretches where it’s just you—or where you don’t always feel like being the one to reach out. A daily companion that remembers you and checks in first can fill that gap without demanding a lot.\n\nMallo is designed for people like you: someone who wants a low-pressure ritual that fits around real life, not another app that waits for you to perform.",
+      "tip": "Start small: one check-in a day, a few minutes. If it feels good, the relationship deepens on its own.",
+      "shareText": "Took the quiz—turns out an AI companion could actually help me. Worth a look.",
+      "ctaEmphasis": "Built for people who want check-ins without the pressure."
+    },
+    {
+      "id": "curious",
+      "scoreRange": [0, 4],
+      "headline": "You might still like it—or you might not need it",
+      "body": "Your answers suggest you already have a fair amount of connection, or you’re the kind of person who prefers to initiate. That’s totally valid.\n\nIf you’re still curious: Mallo isn’t about replacing people. It’s about having one consistent thread—someone who remembers your week and asks how you are—on the days when you don’t want to start from zero. No obligation, no drama.",
+      "tip": "If you try it and it doesn’t fit, no harm done. If it does, you’ll know pretty quickly.",
+      "shareText": "Took the “Is an AI companion right for you?” quiz. Interesting either way.",
+      "ctaEmphasis": "Free to start. See if it fits your life."
+    }
+  ],
+  "scoring": {
+    "alone_often": 3,
+    "alone_sometimes": 2,
+    "rarely_alone": 0,
+    "yes_big": 3,
+    "yes_small": 2,
+    "no": 0,
+    "fully_remote": 3,
+    "hybrid": 2,
+    "mostly_office": 0,
+    "rarely": 3,
+    "sometimes": 2,
+    "often": 0,
+    "yes": 3,
+    "maybe": 1,
+    "no": 0
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Remote Work & Living Alone Wellbeing Check | Free – Mallo",
+    "description": "A short, honest check-in for anyone working from home or living solo. Get a few tailored suggestions—no signup, no judgment. From Mallo.",
+    "slug": "wellbeing-check",
+    "intro": "A quick check for anyone who works from home or spends a lot of time alone. Five questions. Your answers stay private. We don't store them.",
+    "ctaHeadline": "Want someone who checks in on you—and remembers?",
+    "ctaBody": "Mallo is built for people like you: gentle daily check-ins that don't depend on you starting the conversation, and a companion that remembers what you shared so the relationship actually grows. No pressure. Just a small ritual that fits.",
+    "ctaButton": "Try Mallo (free to start)"
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "In a typical week, how many real conversations do you have where you actually talk about how you're doing—not just work or logistics?",
+      "options": [
+        { "value": "q1_few", "label": "Very few or none" },
+        { "value": "q1_some", "label": "One or two" },
+        { "value": "q1_several", "label": "Several" }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "When you finish work for the day, how often do you have a clear \"work is done\" moment—or does everything blur into one long stretch?",
+      "options": [
+        { "value": "q2_blur", "label": "It often blurs—hard to switch off" },
+        { "value": "q2_sometimes", "label": "Sometimes I have a clear end; sometimes I don't" },
+        { "value": "q2_clear", "label": "I usually have a clear end to my day" }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "How often do you wish someone would just ask how you are—without you having to reach out first?",
+      "options": [
+        { "value": "q3_often", "label": "Often" },
+        { "value": "q3_sometimes", "label": "Sometimes" },
+        { "value": "q3_rarely", "label": "Rarely" }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "When you have a small win or a rough moment, how often do you actually tell someone?",
+      "options": [
+        { "value": "q4_rarely", "label": "Rarely—I usually keep it to myself" },
+        { "value": "q4_sometimes", "label": "Sometimes, if the timing feels right" },
+        { "value": "q4_often", "label": "Often—I usually share with someone" }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "How would you describe your relationship with \"having someone who remembers what you shared\"?",
+      "options": [
+        { "value": "q5_missing", "label": "I miss that—I don't really have it right now" },
+        { "value": "q5_some", "label": "I have a bit of it, but not consistently" },
+        { "value": "q5_enough", "label": "I have that—friends, family, or a partner" }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "high_need",
+      "scoreRange": [8, 10],
+      "headline": "You'd benefit from something that checks in on you",
+      "body": "Your answers suggest you're doing a lot on your own—both in terms of work and in terms of who you talk to. That doesn't mean something's wrong with you. It means your setup might not be giving you what most people need: a clear sense that someone notices how you are, and a place to name the small stuff without performing.\n\nYou don't need another productivity tool. You might need one low-pressure thread—something that reaches out, remembers what you said, and doesn't ask you to \"catch it up\" every time. That's what Mallo is for.",
+      "suggestions": [
+        "Try one fixed ritual: same time each day, 2–5 minutes, just you and a check-in. No audience.",
+        "Name one small win or one rough moment out loud or in writing. You don't have to send it to anyone—just name it.",
+        "Give yourself permission to want someone to ask how you are. It's not neediness; it's human."
+      ],
+      "ctaEmphasis": "Mallo is built for people who want check-ins without the pressure to perform."
+    },
+    {
+      "id": "moderate",
+      "scoreRange": [4, 7],
+      "headline": "A little more structure could help",
+      "body": "You're not completely isolated, but there are gaps—maybe the work day bleeds into everything, or you don't always have someone who remembers the small stuff. A daily check-in that doesn't depend on you starting the conversation can fill that gap without demanding a lot.\n\nThink of it as one consistent thread: same time, same low stakes. Over time, that thread becomes something you can rely on when the rest of the week feels scattered.",
+      "suggestions": [
+        "Pick one moment in the day that's \"yours\"—even 5 minutes—and don't fill it with work or feeds.",
+        "Try sharing one small thing with someone this week. It doesn't have to be big—just real.",
+        "If you're curious about a daily companion that remembers you, try Mallo for a few days and see if it fits."
+      ],
+      "ctaEmphasis": "Built for people who want a small ritual, not another app that waits for you."
+    },
+    {
+      "id": "doing_ok",
+      "scoreRange": [0, 3],
+      "headline": "You're in a decent rhythm—but you can still try something new",
+      "body": "Your answers suggest you have some connection and some structure. That's good. If you're still here, maybe you're curious about what it's like to have one more thread—something that checks in on you and remembers what you shared, without being a person you have to \"manage.\"\n\nMallo isn't about replacing the people in your life. It's about having one place that's consistently there, doesn't forget, and doesn't need you to start the conversation every time. If that sounds useful, it's free to try.",
+      "suggestions": [
+        "Keep doing what's working. If you add anything, make it low-pressure—something that fits, not another obligation.",
+        "If you ever have a week when you're more alone than usual, remember that a small daily check-in can help. No shame in it."
+      ],
+      "ctaEmphasis": "Free to start. See if a daily companion fits your life."
+    }
+  ],
+  "scoring": {
+    "q1_few": 2,
+    "q1_some": 1,
+    "q1_several": 0,
+    "q2_blur": 2,
+    "q2_sometimes": 1,
+    "q2_clear": 0,
+    "q3_often": 2,
+    "q3_sometimes": 1,
+    "q3_rarely": 0,
+    "q4_rarely": 2,
+    "q4_sometimes": 1,
+    "q4_often": 0,
+    "q5_missing": 2,
+    "q5_some": 1,
+    "q5_enough": 0
+  },
+  "scoreRanges": {
+    "high_need": [8, 10],
+    "moderate": [4, 7],
+    "doing_ok": [0, 3]
+  }
+}
