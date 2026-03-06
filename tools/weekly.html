@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F5F0E8">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mallopal.com/tools/weekly.html">
+
+  <title>Free Weekly Recap Generator (What Mattered + Gentle Thread) | Mallo</title>
+  <meta name="description" content="Paste a few moments from your week and generate a warm, honest weekly recap prompt you can run in ChatGPT or Claude. Then download a shareable recap card. No signup. By Mallo.">
+  <meta name="keywords" content="weekly recap generator, weekly reflection, weekly check-in, what mattered this week, journaling recap, reflection prompts, AI recap prompt, Mallo weekly recap">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mallopal.com/tools/weekly.html">
+  <meta property="og:title" content="Free Weekly Recap Generator | Mallo">
+  <meta property="og:description" content="Make a warm weekly recap in minutes. Copy the prompt, run it in your favorite AI, then download a share card. No signup.">
+  <meta property="og:image" content="https://mallopal.com/assets/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="MalloPal">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mallopal.com/tools/weekly.html">
+  <meta name="twitter:title" content="Free Weekly Recap Generator | Mallo">
+  <meta name="twitter:description" content="Copy the prompt, run it in ChatGPT/Claude, then download a share card. No signup.">
+  <meta name="twitter:image" content="https://mallopal.com/assets/og-image.jpg">
+
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../assets/app-icon-192.png">
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Weekly Recap Generator",
+    "description": "A free weekly recap generator that helps you write a warm recap and a gentle thread for the week ahead. Copy a prompt, run it in your preferred AI, then download a share card.",
+    "url": "https://mallopal.com/tools/weekly.html",
+    "applicationCategory": "LifestyleApplication",
+    "publisher": { "@type": "Organization", "name": "MalloPal", "url": "https://mallopal.com/" }
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSNCMJY4L8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GSNCMJY4L8');
+    gtag('config', 'AW-17993644455');
+  </script>
+</head>
+<body class="tool-page">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="../" class="logo" aria-label="MalloPal home">MalloPal</a>
+      <nav class="nav" role="navigation" aria-label="Main">
+        <a href="../#tools">Free tools</a>
+        <a href="../#articles">Articles</a>
+        <a href="../#features">Features</a>
+        <a href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=weekly&utm_medium=web&utm_campaign=tools" class="cta-nav" rel="noopener noreferrer" target="_blank">Get Mallo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="tool-wrap" role="main">
+    <nav class="tool-breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> → <a href="../#tools">Free tools</a> → <span aria-current="page">Weekly recap</span>
+    </nav>
+
+    <nav class="tool-strip" aria-label="Free tools">
+      <span class="tool-strip-label">Free tools</span>
+      <a class="tool-pill" href="daily.html"><span class="mini">?</span>Today’s question</a>
+      <a class="tool-pill" href="quiz.html"><span class="mini">✓</span>AI companion quiz</a>
+      <a class="tool-pill" href="wellbeing.html"><span class="mini">◇</span>Wellbeing check</a>
+      <a class="tool-pill" href="guide.html"><span class="mini">7</span>New city guide</a>
+    </nav>
+
+    <article id="weekly-root">
+      <header class="tool-intro">
+        <h1>Free weekly recap (what mattered + a gentle thread)</h1>
+        <p>
+          Paste a few moments from your week. We’ll generate a <strong>Mallo-style</strong> prompt you can run in ChatGPT or Claude to get:
+          a short “what mattered” recap + 2 gentle prompts for next week. Then download a shareable recap card.
+          <br><br>
+          Your text stays on this page—we don’t store it.
+        </p>
+      </header>
+
+      <section class="weekly-section" aria-labelledby="w1" style="margin-top: 26px;">
+        <h2 id="w1" class="weekly-h2">1) Paste a few moments from your week</h2>
+        <p class="weekly-muted">3–10 bullets is perfect. Small details welcome.</p>
+
+        <label class="weekly-label" for="weekly-notes">Your week (private)</label>
+        <textarea
+          id="weekly-notes"
+          class="weekly-textarea"
+          rows="7"
+          placeholder="Example:
+- Worked remote all week and barely left the apartment
+- Finally set up my new place (moved recently)
+- Felt proud after finishing a hard task, but also weirdly flat
+- Missed my friends back home
+- One small win: I went outside before sunset twice"
+        ></textarea>
+
+        <fieldset class="weekly-fieldset">
+          <legend class="weekly-legend">Optional: tailor the tone</legend>
+          <label class="weekly-check"><input type="checkbox" id="seg-living"> I live alone (or newly solo)</label>
+          <label class="weekly-check"><input type="checkbox" id="seg-moved"> I moved / relocated recently</label>
+          <label class="weekly-check"><input type="checkbox" id="seg-remote"> I work remote or hybrid</label>
+          <label class="weekly-check"><input type="checkbox" id="seg-stress"> My job is high-stress / emotionally demanding</label>
+        </fieldset>
+
+        <div class="weekly-actions">
+          <button type="button" class="btn btn-primary" id="weekly-copy-prompt">Copy recap prompt</button>
+          <a class="btn btn-secondary" id="weekly-open-ai" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT</a>
+          <a class="btn btn-secondary" id="weekly-open-claude" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Open Claude</a>
+        </div>
+        <p class="weekly-small" id="weekly-prompt-status" aria-live="polite"></p>
+
+        <details class="weekly-details">
+          <summary>Show the prompt (so you can edit it)</summary>
+          <pre class="weekly-pre" id="weekly-prompt-preview"></pre>
+        </details>
+      </section>
+
+      <section class="weekly-section" aria-labelledby="w2" style="margin-top: 30px;">
+        <h2 id="w2" class="weekly-h2">2) Paste the recap you got back</h2>
+        <p class="weekly-muted">After you run the prompt, paste the recap here to make a share card.</p>
+
+        <label class="weekly-label" for="weekly-summary">“What Mallo noticed” (2–4 sentences)</label>
+        <textarea id="weekly-summary" class="weekly-textarea" rows="4" placeholder="Paste the recap summary here…"></textarea>
+
+        <label class="weekly-label" for="weekly-prompts">A gentle thread for next week (1–2 prompts)</label>
+        <textarea id="weekly-prompts" class="weekly-textarea" rows="3" placeholder="Paste 1–2 prompts here…"></textarea>
+
+        <div class="weekly-actions">
+          <label class="weekly-inline">
+            Card size
+            <select id="weekly-size" class="weekly-select">
+              <option value="ig">Instagram / TikTok (1080×1350)</option>
+              <option value="og">Link preview (1200×630)</option>
+            </select>
+          </label>
+          <button type="button" class="btn btn-primary" id="weekly-generate-card">Generate share card</button>
+        </div>
+        <p class="weekly-small" id="weekly-card-status" aria-live="polite"></p>
+      </section>
+
+      <section class="weekly-section" aria-labelledby="w3" style="margin-top: 30px;">
+        <h2 id="w3" class="weekly-h2">3) Download &amp; share</h2>
+        <p class="weekly-muted">Post the image anywhere. If you want, use the caption too.</p>
+
+        <div class="weekly-card">
+          <canvas id="weekly-canvas" width="1080" height="1350" class="weekly-canvas" aria-label="Weekly recap share card preview"></canvas>
+        </div>
+
+        <div class="weekly-actions" style="margin-top: 14px;">
+          <button type="button" class="btn btn-secondary" id="weekly-download">Download image</button>
+          <button type="button" class="btn btn-secondary" id="weekly-copy-caption">Copy caption</button>
+          <a class="btn btn-secondary" id="weekly-share-x" target="_blank" rel="noopener">Share link on X</a>
+          <a class="btn btn-secondary" id="weekly-share-li" target="_blank" rel="noopener">Share link on LinkedIn</a>
+        </div>
+        <p class="weekly-small" id="weekly-share-status" aria-live="polite"></p>
+
+        <div class="tool-cta">
+          <h3>Want this without copy/paste?</h3>
+          <p>
+            In the app, <strong>Mallo</strong> does this automatically with proactive check-ins, weekly recaps, and memory that carries across days—so the relationship gets deeper each week.
+            Free to start on iPhone.
+          </p>
+          <a href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=weekly&utm_medium=web&utm_campaign=tools" class="btn" rel="noopener noreferrer" target="_blank">Try Mallo (free to start)</a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap">
+      <p class="footer-brand">MalloPal</p>
+      <p class="footer-tagline">Mallo – AI companion that remembers you.</p>
+      <p class="footer-links">
+        <a href="../">Home</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../#tools">Free tools</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../#articles">Articles</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../privacy/">Privacy Policy</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../terms/">Terms of Service</a>
+      </p>
+      <p class="footer-legal">Not a substitute for professional mental health or medical care. If you are in crisis, please contact a qualified professional or emergency services.</p>
+      <p class="footer-copy">&copy; <span id="year"></span> MalloPal. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.body.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href*="apps.apple.com"]');
+      if (a && typeof gtag === 'function') gtag('event', 'click_to_app_store', { event_category: 'engagement', event_label: 'tool_weekly' });
+    });
+
+    (function() {
+      var toolUrl = 'https://mallopal.com/tools/weekly.html';
+      var notesEl = document.getElementById('weekly-notes');
+      var previewEl = document.getElementById('weekly-prompt-preview');
+      var statusEl = document.getElementById('weekly-prompt-status');
+      var summaryEl = document.getElementById('weekly-summary');
+      var promptsEl = document.getElementById('weekly-prompts');
+      var cardStatusEl = document.getElementById('weekly-card-status');
+      var shareStatusEl = document.getElementById('weekly-share-status');
+      var sizeEl = document.getElementById('weekly-size');
+
+      var seg = {
+        living: document.getElementById('seg-living'),
+        moved: document.getElementById('seg-moved'),
+        remote: document.getElementById('seg-remote'),
+        stress: document.getElementById('seg-stress')
+      };
+
+      function selectedSegments() {
+        var out = [];
+        if (seg.living.checked) out.push('living alone / newly solo');
+        if (seg.moved.checked) out.push('relocated / moved recently');
+        if (seg.remote.checked) out.push('remote or hybrid work');
+        if (seg.stress.checked) out.push('high-stress / emotionally demanding job');
+        return out;
+      }
+
+      function buildPrompt() {
+        var notes = (notesEl.value || '').trim();
+        var segs = selectedSegments();
+        var segLine = segs.length ? ('Context (optional): ' + segs.join(', ') + '.') : 'Context (optional): none provided.';
+        return [
+          "You are 'Mallo' — a warm, honest AI companion. You are NOT a therapist. No medical or crisis advice. No clinical language.",
+          "",
+          "Task: write a weekly recap based on the user's notes. Make it feel like a ritual: 'your week with Mallo'.",
+          "",
+          "Output format (exactly):",
+          "1) What Mallo noticed: 2–4 sentences. Specific, concrete, grounded in the notes. Emphasize being seen and continuity. Avoid hype.",
+          "2) A gentle thread for next week: 2 short prompts (one sentence each) that invite a low-pressure next conversation.",
+          "",
+          segLine,
+          "",
+          "User notes:",
+          notes ? notes : "(no notes pasted yet)",
+          "",
+          "Constraints:",
+          "- Keep it kind and companion-like. No therapy framing.",
+          "- Do not mention that you are an AI model.",
+          "- Do not include emojis.",
+          "- Do not include bullet points other than the numbered sections above."
+        ].join("\n");
+      }
+
+      function setShareLinks() {
+        var caption = buildCaption();
+        var x = document.getElementById('weekly-share-x');
+        var li = document.getElementById('weekly-share-li');
+        x.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(caption) + '&url=' + encodeURIComponent(toolUrl);
+        li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(toolUrl);
+      }
+
+      function buildCaption() {
+        var s = (summaryEl.value || '').trim();
+        var first = s ? (s.length > 220 ? s.slice(0, 217) + '…' : s) : "I made a weekly recap (what mattered + a gentle thread).";
+        return first + " — free weekly recap generator by Mallo";
+      }
+
+      function copyText(text) {
+        if (!text) return Promise.reject(new Error('empty'));
+        if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+        return new Promise(function(resolve, reject) {
+          try {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            var ok = document.execCommand('copy');
+            document.body.removeChild(ta);
+            ok ? resolve() : reject(new Error('copy_failed'));
+          } catch (e) { reject(e); }
+        });
+      }
+
+      function wrapLines(ctx, text, maxWidth) {
+        var words = (text || '').split(/\s+/).filter(Boolean);
+        var lines = [];
+        var line = '';
+        for (var i = 0; i < words.length; i++) {
+          var test = line ? (line + ' ' + words[i]) : words[i];
+          if (ctx.measureText(test).width <= maxWidth) {
+            line = test;
+          } else {
+            if (line) lines.push(line);
+            line = words[i];
+          }
+        }
+        if (line) lines.push(line);
+        return lines;
+      }
+
+      function drawCard() {
+        var canvas = document.getElementById('weekly-canvas');
+        var ctx = canvas.getContext('2d');
+        var mode = sizeEl.value || 'ig';
+        var w = mode === 'og' ? 1200 : 1080;
+        var h = mode === 'og' ? 630 : 1350;
+        canvas.width = w;
+        canvas.height = h;
+
+        // Background
+        var grad = ctx.createLinearGradient(0, 0, w, h);
+        grad.addColorStop(0, '#FAF8F3');
+        grad.addColorStop(0.55, '#F5F0E8');
+        grad.addColorStop(1, '#E8E0D5');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Card
+        var pad = mode === 'og' ? 56 : 64;
+        var cardX = pad;
+        var cardY = pad;
+        var cardW = w - pad * 2;
+        var cardH = h - pad * 2;
+        roundRect(ctx, cardX, cardY, cardW, cardH, 32);
+        ctx.fillStyle = 'rgba(255,255,255,0.92)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(212,196,176,0.9)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Title
+        ctx.fillStyle = '#6B5339';
+        ctx.font = '700 ' + (mode === 'og' ? 30 : 34) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+        ctx.fillText('What Mallo noticed', cardX + 44, cardY + 78);
+
+        // Summary
+        var summary = (summaryEl.value || '').trim() || 'Paste your recap summary above, then generate your share card.';
+        ctx.fillStyle = '#2C2C2C';
+        ctx.font = '600 ' + (mode === 'og' ? 24 : 28) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+        var textX = cardX + 44;
+        var textY = cardY + 128;
+        var maxW = cardW - 88;
+        var lines = wrapLines(ctx, summary, maxW);
+        var maxLines = mode === 'og' ? 5 : 12;
+        if (lines.length > maxLines) lines = lines.slice(0, maxLines);
+        var lh = mode === 'og' ? 34 : 38;
+        for (var i = 0; i < lines.length; i++) ctx.fillText(lines[i], textX, textY + i * lh);
+
+        // Prompts
+        var prompts = (promptsEl.value || '').trim();
+        var promptTitleY = textY + lines.length * lh + (mode === 'og' ? 26 : 36);
+        ctx.fillStyle = '#8B6F47';
+        ctx.font = '700 ' + (mode === 'og' ? 22 : 24) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+        ctx.fillText('A gentle thread for next week', textX, promptTitleY);
+
+        ctx.fillStyle = '#2C2C2C';
+        ctx.font = '500 ' + (mode === 'og' ? 20 : 22) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+        var promptText = prompts || 'Add 1–2 prompts above to include them on the card.';
+        var pLines = wrapLines(ctx, promptText, maxW);
+        var pMax = mode === 'og' ? 4 : 8;
+        if (pLines.length > pMax) pLines = pLines.slice(0, pMax);
+        var pY = promptTitleY + (mode === 'og' ? 30 : 34);
+        var pLh = mode === 'og' ? 28 : 32;
+        for (var j = 0; j < pLines.length; j++) ctx.fillText(pLines[j], textX, pY + j * pLh);
+
+        // Footer / watermark
+        ctx.fillStyle = 'rgba(92,92,92,0.85)';
+        ctx.font = '600 ' + (mode === 'og' ? 18 : 20) + 'px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+        ctx.fillText('mallopal.com · Mallo', textX, cardY + cardH - 44);
+      }
+
+      function roundRect(ctx, x, y, width, height, radius) {
+        var r = Math.min(radius, width / 2, height / 2);
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.arcTo(x + width, y, x + width, y + height, r);
+        ctx.arcTo(x + width, y + height, x, y + height, r);
+        ctx.arcTo(x, y + height, x, y, r);
+        ctx.arcTo(x, y, x + width, y, r);
+        ctx.closePath();
+      }
+
+      function init() {
+        // First paint
+        previewEl.textContent = buildPrompt();
+        setShareLinks();
+        drawCard();
+
+        // Keep preview updated
+        [notesEl, seg.living, seg.moved, seg.remote, seg.stress].forEach(function(el) {
+          el.addEventListener('input', function() { previewEl.textContent = buildPrompt(); });
+          el.addEventListener('change', function() { previewEl.textContent = buildPrompt(); });
+        });
+
+        document.getElementById('weekly-copy-prompt').addEventListener('click', function() {
+          var prompt = buildPrompt();
+          copyText(prompt).then(function() {
+            statusEl.textContent = 'Copied. Paste it into ChatGPT/Claude.';
+            if (typeof gtag === 'function') gtag('event', 'weekly_prompt_copy', { event_category: 'tools', event_label: 'weekly' });
+          }).catch(function() {
+            statusEl.textContent = 'Couldn’t copy automatically. Open “Show the prompt” and copy manually.';
+          });
+        });
+
+        document.getElementById('weekly-generate-card').addEventListener('click', function() {
+          drawCard();
+          setShareLinks();
+          cardStatusEl.textContent = 'Share card generated.';
+          if (typeof gtag === 'function') gtag('event', 'weekly_card_generate', { event_category: 'tools', event_label: sizeEl.value || 'ig' });
+        });
+
+        sizeEl.addEventListener('change', function() { drawCard(); });
+
+        document.getElementById('weekly-download').addEventListener('click', function() {
+          try {
+            var canvas = document.getElementById('weekly-canvas');
+            var link = document.createElement('a');
+            var mode = sizeEl.value || 'ig';
+            link.download = 'mallo-weekly-recap-' + mode + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            shareStatusEl.textContent = 'Downloaded.';
+            if (typeof gtag === 'function') gtag('event', 'weekly_card_download', { event_category: 'tools', event_label: mode });
+          } catch (e) {
+            shareStatusEl.textContent = 'Download failed on this browser. Try taking a screenshot instead.';
+          }
+        });
+
+        document.getElementById('weekly-copy-caption').addEventListener('click', function() {
+          var caption = buildCaption();
+          copyText(caption).then(function() {
+            shareStatusEl.textContent = 'Caption copied.';
+            if (typeof gtag === 'function') gtag('event', 'weekly_caption_copy', { event_category: 'tools', event_label: 'weekly' });
+          }).catch(function() {
+            shareStatusEl.textContent = 'Couldn’t copy caption automatically.';
+          });
+        });
+
+        // Redraw when text changes
+        [summaryEl, promptsEl].forEach(function(el) {
+          el.addEventListener('input', function() { setShareLinks(); });
+        });
+
+        // Set share links immediately
+        setShareLinks();
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
+

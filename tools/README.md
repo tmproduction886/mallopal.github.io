@@ -8,6 +8,7 @@ Use these tools to **help users** (real value, no fluff) and **drive maximum tra
 
 | Page | URL | Purpose |
 |------|-----|--------|
+| **Weekly recap** | `/tools/weekly.html` | “Free weekly recap” – copy a Mallo-style prompt, run it in ChatGPT/Claude, then download a shareable recap card |
 | **Quiz** | `/tools/quiz.html` | “Is an AI companion right for you?” – 5 questions, 3 results, shareable `?result=strong_fit|good_fit|curious` |
 | **Guide** | `/tools/guide.html` | “Your first 7 days in a new city” – full guide with HowTo schema, static content |
 | **Daily** | `/tools/daily.html` | “Today’s one question” – one question per day (day-of-year % 15), rotates daily |
@@ -64,6 +65,7 @@ Each page has: unique `<title>` and meta description, canonical URL, Open Graph 
 
 - **No email gate.** All tools are usable and valuable without signup. CTA to the app is the only “conversion” on the page.
 - **Shareability:** For quiz and wellbeing check, add “Share my result” (e.g. open graph with result headline + mallopal.com/tools/quiz). For daily question, “Share today’s question” with the question text.
+- **Weekly recap:** Designed to create a shareable artifact (downloadable image card). The prompt is generated client-side; user runs it in their preferred AI, then pastes results back to make a card.
 - **UTM:** Append `?utm_source=quiz` (or `guide`, `daily`, `wellbeing`) to App Store links so you can measure which tool drives installs.
 - **Consistent CTA:** Every tool ends with the same idea: “Mallo checks in on you, remembers you, no pressure.” Button: “Try Mallo (free to start)” → App Store.
 

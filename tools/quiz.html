@@ -30,7 +30,7 @@
   <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
   <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
-  <link rel="apple-touch-icon" href="../assets/app-icon-180.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="../assets/app-icon-192.png">
   <link rel="stylesheet" href="../styles.css">
 
   <script type="application/ld+json">
@@ -71,6 +71,14 @@
   <main id="main" class="tool-wrap" role="main">
     <nav class="tool-breadcrumb" aria-label="Breadcrumb">
       <a href="../">Home</a> → <a href="../#tools">Free tools</a> → <span aria-current="page">Quiz</span>
+    </nav>
+
+    <nav class="tool-strip" aria-label="Free tools">
+      <span class="tool-strip-label">Free tools</span>
+      <a class="tool-pill" href="weekly.html"><span class="mini">↺</span>Weekly recap</a>
+      <a class="tool-pill" href="daily.html"><span class="mini">?</span>Today’s question</a>
+      <a class="tool-pill" href="wellbeing.html"><span class="mini">◇</span>Wellbeing check</a>
+      <a class="tool-pill" href="guide.html"><span class="mini">7</span>New city guide</a>
     </nav>
 
     <div id="quiz-root">
@@ -211,6 +219,7 @@
         var container = document.getElementById('quiz-result');
         var body = (res.body || '').replace(/\n\n/g, '\n');
         var shareUrl = 'https://mallopal.com/tools/quiz.html?result=' + resultId;
+        var weeklyUrl = 'https://mallopal.com/tools/weekly.html';
         container.innerHTML =
           '<div class="quiz-result">' +
           '<h2>' + escapeHtml(res.headline) + '</h2>' +
@@ -219,6 +228,8 @@
           '<div class="share-bar">' +
           '<button type="button" id="share-copy">Copy my result link</button>' +
           '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(res.shareText || res.headline) + '&url=' + encodeURIComponent(shareUrl) + '" target="_blank" rel="noopener">Share on X</a>' +
+          '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl) + '" target="_blank" rel="noopener">Share on LinkedIn</a>' +
+          '<a href="' + weeklyUrl + '" rel="noopener">Make a weekly recap</a>' +
           '</div>' +
           '<div class="tool-cta">' +
           '<h3>' + escapeHtml(data.meta.ctaHeadline) + '</h3>' +
@@ -228,6 +239,7 @@
         document.getElementById('share-copy').addEventListener('click', function() {
           navigator.clipboard.writeText(shareUrl).then(function() {
             this.textContent = 'Copied!';
+            if (typeof gtag === 'function') gtag('event', 'share_copy', { event_category: 'share', event_label: 'tool_quiz' });
           }.bind(this));
         });
       }

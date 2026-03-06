@@ -28,7 +28,7 @@
   <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
   <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
-  <link rel="apple-touch-icon" href="../assets/app-icon-180.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="../assets/app-icon-192.png">
   <link rel="stylesheet" href="../styles.css">
 
   <script type="application/ld+json">
@@ -80,12 +80,26 @@
       <a href="../">Home</a> → <a href="../#tools">Free tools</a> → <span aria-current="page">7-day guide</span>
     </nav>
 
+    <nav class="tool-strip" aria-label="Free tools">
+      <span class="tool-strip-label">Free tools</span>
+      <a class="tool-pill" href="weekly.html"><span class="mini">↺</span>Weekly recap</a>
+      <a class="tool-pill" href="daily.html"><span class="mini">?</span>Today’s question</a>
+      <a class="tool-pill" href="quiz.html"><span class="mini">✓</span>AI companion quiz</a>
+      <a class="tool-pill" href="wellbeing.html"><span class="mini">◇</span>Wellbeing check</a>
+    </nav>
+
     <article>
       <header class="guide-intro">
         <h1>Your first 7 days in a new city</h1>
         <p class="lead">A practical guide for anyone who just moved—and wants the first week to feel less like chaos and more like a real start. One small thing per day.</p>
         <p class="note">You don't have to do every task. Pick what fits. The goal is to give yourself a few anchors so that by Day 7, the new place feels a little more like yours.</p>
         <p class="share-links">Share this guide: <a href="https://mallopal.com/tools/guide.html">mallopal.com/tools/guide</a> · <a href="../articles/first-week-new-city-by-region.html">First week by region (US, UK, abroad)</a></p>
+        <div class="share-bar" aria-label="Share this guide" style="margin-top: 18px;">
+          <button type="button" id="share-copy">Copy link</button>
+          <a id="share-x" target="_blank" rel="noopener">Share on X</a>
+          <a id="share-li" target="_blank" rel="noopener">Share on LinkedIn</a>
+          <a href="weekly.html" rel="noopener">Make a weekly recap</a>
+        </div>
       </header>
 
       <section class="guide-day" aria-labelledby="day1">
@@ -164,6 +178,23 @@
         if (typeof gtag === 'function') gtag('event', 'click_to_app_store', { event_category: 'engagement', event_label: 'tool_guide' });
       });
     });
+
+    (function() {
+      var url = 'https://mallopal.com/tools/guide.html';
+      var x = document.getElementById('share-x');
+      var li = document.getElementById('share-li');
+      if (x) x.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('Your first 7 days in a new city (free guide)') + '&url=' + encodeURIComponent(url);
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+      var copy = document.getElementById('share-copy');
+      if (copy) copy.addEventListener('click', function() {
+        (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(url) : Promise.reject())
+          .then(function() {
+            copy.textContent = 'Copied!';
+            if (typeof gtag === 'function') gtag('event', 'share_copy', { event_category: 'share', event_label: 'tool_guide' });
+          })
+          .catch(function() { copy.textContent = 'Copy failed'; });
+      });
+    })();
   </script>
 </body>
 </html>

@@ -27,7 +27,8 @@
 
   <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
   <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="../assets/app-icon-180.png" sizes="180x180">
+  <link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../assets/app-icon-192.png">
   <link rel="stylesheet" href="../styles.css">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSNCMJY4L8"></script>
@@ -111,6 +112,22 @@
         A lot of people ask this before trying one. The short answer: it depends on what you want. If you're looking for a low-pressure daily check-in, something that remembers what you share, and a small ritual that fits around real life—especially if you <strong>live alone</strong>, <strong>work remotely</strong>, or are in a <strong>new city</strong>—then an AI companion might be a good fit. It's not a replacement for friends, family, or professional support. Below we answer the question in plain language, then point you to a <a href="../tools/quiz.html" style="color: var(--brown-dark); font-weight: 600; text-decoration: none;">free 5-question quiz</a> so you can see for yourself.
       </p>
 
+      <nav class="tool-strip" aria-label="Free tools">
+        <span class="tool-strip-label">Free tools</span>
+        <a class="tool-pill" href="../tools/weekly.html"><span class="mini">↺</span>Weekly recap</a>
+        <a class="tool-pill" href="../tools/daily.html"><span class="mini">?</span>Today’s question</a>
+        <a class="tool-pill" href="../tools/quiz.html"><span class="mini">✓</span>AI companion quiz</a>
+        <a class="tool-pill" href="../tools/wellbeing.html"><span class="mini">◇</span>Wellbeing check</a>
+        <a class="tool-pill" href="../tools/guide.html"><span class="mini">7</span>New city guide</a>
+      </nav>
+
+      <div class="share-bar" aria-label="Share this article">
+        <button type="button" id="share-copy">Copy link</button>
+        <a id="share-x" target="_blank" rel="noopener">Share on X</a>
+        <a id="share-li" target="_blank" rel="noopener">Share on LinkedIn</a>
+        <a href="../tools/weekly.html" rel="noopener">Make a weekly recap</a>
+      </div>
+
       <h2 style="font-size: 1.4rem; margin: 24px 0 10px; color: var(--text);">Who are AI companions good for?</h2>
       <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0 0 14px;">
         They tend to work best for people who want:
@@ -149,7 +166,7 @@
       </p>
       <p style="margin: 0 0 32px;">
         <a
-          href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=article&utm_medium=web&utm_campaign=content"
+          href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=article_is_ai_right&utm_medium=web&utm_campaign=content"
           class="cta-download-app"
           style="display: inline-block; padding: 14px 28px; border-radius: 999px; background: var(--brown-dark); color: #fff; font-weight: 600; text-decoration: none; font-size: 0.98rem;"
           rel="noopener noreferrer"
@@ -189,6 +206,24 @@
         if (typeof gtag === 'function') gtag('event', 'click_to_app_store', { event_category: 'engagement', event_label: 'article_is_ai_right' });
       });
     });
+
+    (function() {
+      var url = 'https://mallopal.com/articles/is-ai-companion-right-for-me.html';
+      var x = document.getElementById('share-x');
+      var li = document.getElementById('share-li');
+      if (x) x.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('Is an AI companion right for me? Honest answer + free quiz') + '&url=' + encodeURIComponent(url);
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+      var copy = document.getElementById('share-copy');
+      if (copy) copy.addEventListener('click', function() {
+        var text = url;
+        (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(text) : Promise.reject())
+          .then(function() {
+            copy.textContent = 'Copied!';
+            if (typeof gtag === 'function') gtag('event', 'share_copy', { event_category: 'share', event_label: 'article_is_ai_right' });
+          })
+          .catch(function() { copy.textContent = 'Copy failed'; });
+      });
+    })();
   </script>
 </body>
 </html>

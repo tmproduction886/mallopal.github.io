@@ -28,7 +28,7 @@
   <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
   <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="../assets/favicon-16.png" type="image/png" sizes="16x16">
-  <link rel="apple-touch-icon" href="../assets/app-icon-180.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="../assets/app-icon-192.png">
   <link rel="stylesheet" href="../styles.css">
 
   <script type="application/ld+json">
@@ -69,6 +69,14 @@
   <main id="main" class="tool-wrap" role="main">
     <nav class="tool-breadcrumb" aria-label="Breadcrumb">
       <a href="../">Home</a> → <a href="../#tools">Free tools</a> → <span aria-current="page">Today's question</span>
+    </nav>
+
+    <nav class="tool-strip" aria-label="Free tools">
+      <span class="tool-strip-label">Free tools</span>
+      <a class="tool-pill" href="weekly.html"><span class="mini">↺</span>Weekly recap</a>
+      <a class="tool-pill" href="quiz.html"><span class="mini">✓</span>AI companion quiz</a>
+      <a class="tool-pill" href="wellbeing.html"><span class="mini">◇</span>Wellbeing check</a>
+      <a class="tool-pill" href="guide.html"><span class="mini">7</span>New city guide</a>
     </nav>
 
     <article id="daily-root">
@@ -126,8 +134,10 @@
           '<div class="daily-q" role="heading" aria-level="2">' + escapeHtml(q.question) + '</div>' +
           '<div class="daily-q-actions">' +
           '<button type="button" class="btn btn-primary" id="show-response">See a thought</button> ' +
+          '<button type="button" class="btn btn-secondary daily-share" id="copy-link" aria-label="Copy link">Copy link</button> ' +
           '<a href="' + shareUrlTwitter + '" class="btn btn-secondary daily-share" target="_blank" rel="noopener" aria-label="Share on X">Share on X</a> ' +
           '<a href="' + shareUrlLinkedIn + '" class="btn btn-secondary daily-share" target="_blank" rel="noopener" aria-label="Share on LinkedIn">Share on LinkedIn</a>' +
+          ' <a href="weekly.html" class="btn btn-secondary daily-share" aria-label="Make a weekly recap">Weekly recap</a>' +
           '</div>';
         document.getElementById('daily-response-block').innerHTML = '<div class="daily-response">' + escapeHtml(q.response) + '</div>';
         document.getElementById('daily-cta-block').innerHTML = '<h3>' + escapeHtml(d.meta.ctaHeadline) + '</h3><p>' + escapeHtml(d.meta.ctaBody) + '</p><a href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=daily&utm_medium=web&utm_campaign=tools" class="btn" rel="noopener noreferrer" target="_blank">' + escapeHtml(d.meta.ctaButton) + '</a>';
@@ -135,6 +145,15 @@
           this.style.display = 'none';
           document.getElementById('daily-response-block').style.display = 'block';
           document.getElementById('daily-cta-block').style.display = 'block';
+        });
+        document.getElementById('copy-link').addEventListener('click', function() {
+          var self = this;
+          (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(pageUrl) : Promise.reject())
+            .then(function() {
+              self.textContent = 'Copied!';
+              if (typeof gtag === 'function') gtag('event', 'share_copy', { event_category: 'share', event_label: 'tool_daily' });
+            })
+            .catch(function() { self.textContent = 'Copy failed'; });
         });
       }).catch(function() {
         document.getElementById('daily-question-block').innerHTML = '<p>Unable to load today\'s question. <a href="../#tools">Back to free tools</a>.</p>';

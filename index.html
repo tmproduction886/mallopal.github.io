@@ -41,7 +41,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
   <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="assets/favicon-16.png" type="image/png" sizes="16x16">
-  <link rel="apple-touch-icon" href="assets/app-icon-180.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="assets/app-icon-192.png">
   <link rel="manifest" href="manifest.json">
 
   <link
@@ -151,10 +151,11 @@
         "name": "Free tools",
         "description": "Free, no-signup tools to help you see if a daily AI companion fits your life: quiz, 7-day new city guide, daily question, remote wellbeing check.",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Is an AI companion right for you? Quiz", "url": "https://mallopal.com/tools/quiz.html" },
-          { "@type": "ListItem", "position": 2, "name": "Your first 7 days in a new city guide", "url": "https://mallopal.com/tools/guide.html" },
-          { "@type": "ListItem", "position": 3, "name": "Today's one question – daily check-in", "url": "https://mallopal.com/tools/daily.html" },
-          { "@type": "ListItem", "position": 4, "name": "Remote work & living alone wellbeing check", "url": "https://mallopal.com/tools/wellbeing.html" }
+          { "@type": "ListItem", "position": 1, "name": "Free weekly recap generator (what mattered + gentle thread)", "url": "https://mallopal.com/tools/weekly.html" },
+          { "@type": "ListItem", "position": 2, "name": "Is an AI companion right for you? Quiz", "url": "https://mallopal.com/tools/quiz.html" },
+          { "@type": "ListItem", "position": 3, "name": "Your first 7 days in a new city guide", "url": "https://mallopal.com/tools/guide.html" },
+          { "@type": "ListItem", "position": 4, "name": "Today's one question – daily check-in", "url": "https://mallopal.com/tools/daily.html" },
+          { "@type": "ListItem", "position": 5, "name": "Remote work & living alone wellbeing check", "url": "https://mallopal.com/tools/wellbeing.html" }
         ]
       }
     ]
@@ -207,6 +208,12 @@
                 target="_blank"
               >
                 Get Mallo on iPhone
+              </a>
+              <a
+                href="tools/weekly.html"
+                class="btn btn-secondary hero-secondary-cta"
+              >
+                Get a free weekly recap
               </a>
               <button class="btn btn-secondary hero-secondary-cta" type="button" onclick="document.getElementById('how').scrollIntoView({ behavior: 'smooth' });">
                 See how it works
@@ -288,6 +295,12 @@
           <h2 id="tools-heading" class="section-title">Free tools that actually help</h2>
           <p class="tools-lead">No signup, no email. Use them, share them, and see if a daily companion fits your life.</p>
           <ul class="tools-grid" role="list">
+            <li class="tool-card" role="listitem">
+              <span class="tool-icon" aria-hidden="true">↺</span>
+              <h3><a href="tools/weekly.html">Free weekly recap generator</a></h3>
+              <p>Paste a few moments from your week, copy a Mallo-style prompt, and download a shareable recap card (what mattered + a gentle thread).</p>
+              <a href="tools/weekly.html" class="tool-link">Make your recap →</a>
+            </li>
             <li class="tool-card" role="listitem">
               <span class="tool-icon" aria-hidden="true">✓</span>
               <h3><a href="tools/quiz.html">Is an AI companion right for you?</a></h3>
