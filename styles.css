@@ -113,7 +113,7 @@ body {
   height: 28px;
   border-radius: 10px;
   background-image:
-    url("/assets/app-icon-192.png"),
+    url("assets/app-icon-192.png"),
     radial-gradient(circle at 30% 30%, rgba(255, 182, 193, 0.55), transparent 55%),
     radial-gradient(circle at 70% 70%, rgba(139, 111, 71, 0.35), transparent 55%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 224, 213, 0.8));
@@ -1067,7 +1067,7 @@ body {
 
 /* ─── Tool pages (quiz, guide, daily, wellbeing) ─────────────────────────── */
 .tool-page {
-  padding: 32px 0 64px;
+  padding: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1079,6 +1079,11 @@ body {
 
 .tool-page main {
   flex: 1;
+}
+
+/* Keep the header flush to the top, but give tool content breathing room */
+.tool-page main.tool-wrap {
+  padding-top: 32px;
 }
 
 .tool-breadcrumb {
@@ -1802,7 +1807,11 @@ body {
   }
 
   .tool-page {
-    padding: 20px 0 48px;
+    padding: 0;
+  }
+
+  .tool-page main.tool-wrap {
+    padding-top: 20px;
   }
 
   .tool-intro,
