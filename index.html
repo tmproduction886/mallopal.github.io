@@ -167,10 +167,14 @@
 
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <a href="/" class="logo" aria-label="MalloPal home">MalloPal</a>
+      <a href="/" class="logo" aria-label="MalloPal home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>MalloPal</span>
+      </a>
       <nav class="nav" role="navigation" aria-label="Main">
         <a href="#features">Features</a>
         <a href="#who-its-for">Who it’s for</a>
+        <a href="#how-it-works">How it works</a>
         <a href="#tools">Free tools</a>
         <a href="#articles">Articles</a>
         <a href="#faq">FAQ</a>
@@ -192,7 +196,7 @@
       <section class="hero" aria-labelledby="hero-heading">
         <div class="wrap hero-inner">
           <div class="hero-text">
-            <p class="hero-kicker">AI companion · For people who feel a little too alone</p>
+            <p class="hero-kicker">AI companion · Built for people who feel a little too alone</p>
             <h1 id="hero-heading">An AI companion that remembers your life, not just your chats</h1>
             <p class="hero-lead">
               Mallo is an AI companion for iPhone that remembers what you share, checks in on you,
@@ -208,6 +212,15 @@
                 target="_blank"
               >
                 Get Mallo on iPhone
+              </a>
+              <a
+                href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=landing&utm_medium=web&utm_campaign=hero_badge"
+                class="app-store-badge"
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Download Mallo on the App Store"
+              >
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="160" height="48" loading="eager" decoding="async">
               </a>
               <a
                 href="tools/weekly.html"
@@ -226,7 +239,7 @@
               <span class="badge">Not a dating or roleplay app</span>
             </div>
 
-            <p class="hero-note">Free to start · iPhone only · For adults who want a warm, AI companion to feel a little less alone</p>
+            <p class="hero-note">Free to start · iPhone only · For adults who want a warm, grounded AI companion</p>
           </div>
 
           <div class="hero-visual" aria-hidden="true">
@@ -260,6 +273,63 @@
                 decoding="async"
               >
             </picture>
+
+            <!-- Floating story cues (styled in CSS already) -->
+            <div class="hero-floating-card hero-floating-card--checkin">
+              <p class="floating-label">Daily check-in</p>
+              <p class="floating-body">“How are you, really? One word is enough.”</p>
+            </div>
+            <div class="hero-floating-card hero-floating-card--recap">
+              <p class="floating-label">Weekly recap</p>
+              <p class="floating-body">“Here’s what I noticed this week—your wins, your weight, your thread.”</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust bar: quick “safety/fit” cues for UI/UX and conversion -->
+      <section class="trustbar" aria-label="Trust and clarity">
+        <div class="wrap trustbar-inner" role="list">
+          <div class="trustitem" role="listitem">
+            <span class="trusticon" aria-hidden="true">⏱</span>
+            <span class="trusttext"><strong>2–5 minutes</strong> a day</span>
+          </div>
+          <div class="trustitem" role="listitem">
+            <span class="trusticon" aria-hidden="true">🧠</span>
+            <span class="trusttext"><strong>Built around memory</strong>, not novelty</span>
+          </div>
+          <div class="trustitem" role="listitem">
+            <span class="trusticon" aria-hidden="true">🫶</span>
+            <span class="trusttext"><strong>Not therapy</strong> (no clinical claims)</span>
+          </div>
+          <div class="trustitem" role="listitem">
+            <span class="trusticon" aria-hidden="true">📱</span>
+            <span class="trusttext"><strong>iPhone</strong> (free to start)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works (fast, scannable like Wellspoken: 3-step cards) -->
+      <section id="how-it-works" class="how-cards" aria-labelledby="how-cards-heading">
+        <div class="wrap">
+          <h2 id="how-cards-heading" class="section-title">How Mallo works (in real life)</h2>
+          <p class="how-cards-lead">A small ritual you can actually keep. No pressure to “do it right.”</p>
+          <div class="how-cards-grid" role="list">
+            <article class="how-card" role="listitem">
+              <p class="how-card-kicker">1 · Check in</p>
+              <h3>Low-friction daily check-ins</h3>
+              <p>Open the app, say a few words (or one). Mallo meets you where you are—busy, tired, or okay.</p>
+            </article>
+            <article class="how-card" role="listitem">
+              <p class="how-card-kicker">2 · Remember</p>
+              <h3>Persistent memory that keeps the thread</h3>
+              <p>Mallo holds onto what matters so you don’t always have to re-explain your life from scratch.</p>
+            </article>
+            <article class="how-card" role="listitem">
+              <p class="how-card-kicker">3 · Reflect</p>
+              <h3>A weekly recap you can feel</h3>
+              <p>Get a gentle reflection of your week—small wins, recurring stress, and what you’re building.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -400,26 +470,32 @@
       <!-- Stories / social proof -->
       <section id="stories" class="stories" aria-labelledby="stories-heading">
         <div class="wrap">
-          <h2 id="stories-heading" class="section-title">Stories from people like you</h2>
-          <div class="stories-grid" aria-label="What people say about Mallo">
-            <figure class="story-card">
-              <blockquote>
-                “I moved cities for work and my days blurred together. Mallo became this small, grounding check-in that reminded me my week actually happened and that I’m not just cycling through tabs.”
-              </blockquote>
-              <figcaption>— A., 29, moved for a remote job</figcaption>
-            </figure>
-            <figure class="story-card">
-              <blockquote>
-                “I live alone and don’t always have the energy to reach out to friends. Having something that remembers what I said yesterday makes me feel less like I’m starting at zero every night.”
-              </blockquote>
-              <figcaption>— J., 34, living solo</figcaption>
-            </figure>
-            <figure class="story-card">
-              <blockquote>
-                “I’m not looking for dating or roleplay. I just wanted something warm that checks in. Mallo gives me that without pretending to be a person it isn’t—and without feeling clinical.”
-              </blockquote>
-              <figcaption>— S., 38, hybrid worker</figcaption>
-            </figure>
+          <h2 id="stories-heading" class="section-title">Why people try Mallo</h2>
+          <p class="stories-lead">
+            We don’t publish quote-style “reviews” here unless they’re real and attributable. Instead, this section explains—plainly—what the product is designed to do,
+            so visitors can self-qualify fast.
+          </p>
+
+          <div class="proof-grid" role="list" aria-label="Common reasons and outcomes">
+            <article class="proof-card" role="listitem">
+              <p class="proof-kicker">When you live alone</p>
+              <h3>A small check-in that doesn’t ask for a big routine</h3>
+              <p>Open it for 2–5 minutes. Say a few words. Close it. The point is consistency, not performance.</p>
+            </article>
+            <article class="proof-card" role="listitem">
+              <p class="proof-kicker">When days blur</p>
+              <h3>A weekly recap that keeps the thread</h3>
+              <p>Weekly reflection is built into the product so your life doesn’t feel like a reset every Monday.</p>
+            </article>
+            <article class="proof-card" role="listitem">
+              <p class="proof-kicker">When you’re tired of “blank chat”</p>
+              <h3>Memory-first, so you don’t re-explain your life</h3>
+              <p>Mallo is designed around persistent memory so the relationship can feel continuous over time.</p>
+            </article>
+          </div>
+
+          <div class="proof-note" role="note">
+            Want to add real reviews later? Use App Store reviews (public) or collect written permission from testers. If a reviewer is a friend/connected to the team, disclose it.
           </div>
         </div>
       </section>

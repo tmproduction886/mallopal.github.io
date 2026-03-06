@@ -97,10 +97,25 @@ body {
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo:hover {
   color: var(--brown-dark);
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 182, 193, 0.55), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(139, 111, 71, 0.35), transparent 55%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 224, 213, 0.8));
+  border: 1px solid rgba(212, 196, 176, 0.9);
+  box-shadow: 0 6px 16px var(--shadow);
 }
 
 .nav {
@@ -277,6 +292,32 @@ body {
   gap: 10px;
 }
 
+.app-store-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.app-store-badge img {
+  display: block;
+  height: auto;
+  max-width: 180px;
+  border-radius: 12px;
+}
+
+.app-store-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px var(--shadow);
+}
+
+.app-store-badge:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 3px;
+}
+
 .btn {
   display: inline-block;
   padding: 16px 32px;
@@ -397,6 +438,61 @@ body {
 .who {
   padding: 72px 0;
   background: var(--white);
+}
+
+.how-cards {
+  padding: 56px 0 68px;
+  background: var(--white);
+}
+
+.how-cards .section-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.how-cards-lead {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 620px;
+  margin: 0 auto 34px;
+  line-height: 1.55;
+}
+
+.how-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.how-card {
+  background: var(--cream-light);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  border: 1px solid var(--cream-dark);
+  box-shadow: 0 3px 14px var(--shadow);
+}
+
+.how-card-kicker {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown-darker);
+  font-weight: 700;
+}
+
+.how-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.how-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 .section-title {
@@ -692,13 +788,115 @@ body {
   background: var(--white);
 }
 
-.stories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+.stories-lead {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  line-height: 1.55;
 }
 
-.story-card {
+.trustbar {
+  background: var(--white);
+  border-top: 1px solid rgba(232, 224, 213, 0.8);
+  border-bottom: 1px solid rgba(232, 224, 213, 0.8);
+}
+
+.trustbar-inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 16px 24px;
+}
+
+.trustitem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 999px;
+  background: rgba(250, 248, 243, 0.85);
+  border: 1px solid rgba(232, 224, 213, 0.9);
+  box-shadow: 0 2px 10px var(--shadow);
+  color: var(--text);
+}
+
+.trusticon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(139, 111, 71, 0.10);
+  border: 1px solid rgba(139, 111, 71, 0.16);
+  font-size: 0.95rem;
+}
+
+.trusttext {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.25;
+}
+
+.trusttext strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* “Proof” cards (non-testimonial social proof, no quotes) */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.proof-card {
+  background: var(--cream-light);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  border: 1px solid var(--cream-dark);
+  box-shadow: 0 3px 14px var(--shadow);
+}
+
+.proof-kicker {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown-darker);
+  font-weight: 800;
+}
+
+.proof-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.06rem;
+  color: var(--text);
+}
+
+.proof-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.proof-note {
+  max-width: 760px;
+  margin: 18px auto 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(139, 111, 71, 0.06);
+  border: 1px solid rgba(139, 111, 71, 0.16);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.testimonial-card {
   margin: 0;
   padding: 22px 20px;
   border-radius: var(--radius);
@@ -707,17 +905,39 @@ body {
   box-shadow: 0 3px 14px var(--shadow);
 }
 
-.story-card blockquote {
-  margin: 0 0 12px;
+.testimonial-card .stars {
   font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.6;
+  letter-spacing: 0.12em;
+  color: #111;
+  opacity: 0.9;
+  margin-bottom: 10px;
 }
 
-.story-card figcaption {
-  font-size: 0.85rem;
+.testimonial-card blockquote {
+  margin: 0 0 14px;
+  font-size: 0.96rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.testimonial-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.86rem;
   color: var(--text-muted);
 }
+
+.testimonial-card figcaption .who {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.testimonial-card figcaption .meta {
+  opacity: 0.9;
+}
+
+/* (Stories grid styles removed – replaced by .proof-grid / .proof-card) */
 
 /* Download CTA */
 .download {
@@ -1639,6 +1859,10 @@ body {
     align-items: center;
   }
 
+  .app-store-badge {
+    justify-content: center;
+  }
+
   .hero-pill-row {
     justify-content: center;
   }
@@ -1668,6 +1892,21 @@ body {
   .hero-floating-card--recap {
     right: -2%;
     bottom: -8%;
+  }
+
+  .how-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .trustbar-inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px 24px;
+  }
+
+  .trustitem {
+    justify-content: flex-start;
   }
 }
 
