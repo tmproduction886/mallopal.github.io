@@ -21,6 +21,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://mallopal.com/articles/is-ai-companion-right-for-me.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mallopal.com/articles/loneliness-remote-work-ai-companions.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

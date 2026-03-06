@@ -137,6 +137,60 @@ body {
   color: var(--brown-darker) !important;
 }
 
+/* Sticky CTA bar – visible on scroll, drives conversion */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(250, 248, 243, 0.97);
+  border-top: 1px solid rgba(232, 224, 213, 0.8);
+  padding: 12px 24px;
+  box-shadow: 0 -4px 20px var(--shadow);
+}
+@supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+  .sticky-cta-bar {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+.sticky-cta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.sticky-cta-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.sticky-cta-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--brown-dark);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.sticky-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-strong);
+}
+@media (max-width: 480px) {
+  .sticky-cta-bar { padding: 10px 16px; }
+  .sticky-cta-inner { justify-content: center; text-align: center; }
+  .sticky-cta-text { width: 100%; font-size: 0.9rem; }
+}
+
 /* Hero – split layout: app visual + copy */
 .hero {
   background: radial-gradient(circle at top right, rgba(139, 111, 71, 0.08), transparent 55%),

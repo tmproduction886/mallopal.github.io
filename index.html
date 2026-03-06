@@ -174,7 +174,7 @@
         <a href="#articles">Articles</a>
         <a href="#faq">FAQ</a>
         <a
-          href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766"
+          href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=landing&utm_medium=web&utm_campaign=nav"
           class="cta-nav"
           rel="noopener noreferrer"
           target="_blank"
@@ -201,7 +201,7 @@
 
             <div class="hero-cta">
               <a
-                href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766"
+                href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=landing&utm_medium=web&utm_campaign=hero"
                 class="btn btn-primary"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -418,6 +418,12 @@
           <p class="tools-lead">Human-written, no fluff. For when you're alone during the holidays, just moved, or want to understand why loneliness hits and what actually helps. <a href="articles/">Browse all articles &amp; tools</a>.</p>
           <ul class="tools-grid" role="list">
             <li class="tool-card" role="listitem">
+              <span class="tool-icon" aria-hidden="true">?</span>
+              <h3><a href="articles/is-ai-companion-right-for-me.html">Is an AI companion right for me?</a></h3>
+              <p>Honest answer plus a free 5-question quiz. No signup. For anyone living alone, remote, or in a new city.</p>
+              <a href="articles/is-ai-companion-right-for-me.html" class="tool-link">Read &amp; take quiz →</a>
+            </li>
+            <li class="tool-card" role="listitem">
               <span class="tool-icon" aria-hidden="true">✦</span>
               <h3><a href="articles/loneliness-remote-work-ai-companions.html">Loneliness, remote work &amp; AI companions</a></h3>
               <p>Why loneliness sneaks up on people who live alone, work remotely, or moved to a new city—and how small rituals (including an AI that remembers you) help.</p>
@@ -474,7 +480,7 @@
           <h2 id="download-heading" class="section-title">Start with Mallo today</h2>
           <p class="download-tagline">Your companion that remembers you. Free to start on iPhone.</p>
           <a
-            href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766"
+            href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=landing&utm_medium=web&utm_campaign=download"
             class="store-button"
             rel="noopener noreferrer"
             target="_blank"
@@ -490,6 +496,19 @@
       </section>
     </article>
   </main>
+
+  <!-- Sticky CTA: visible after scroll, drives conversion -->
+  <div id="sticky-cta" class="sticky-cta-bar" aria-hidden="true" style="display: none;">
+    <div class="sticky-cta-inner">
+      <span class="sticky-cta-text">Your companion that remembers you.</span>
+      <a
+        href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=landing&utm_medium=web&utm_campaign=sticky"
+        class="sticky-cta-btn"
+        rel="noopener noreferrer"
+        target="_blank"
+      >Get Mallo</a>
+    </div>
+  </div>
 
   <footer class="site-footer" role="contentinfo">
     <div class="wrap">
@@ -525,6 +544,23 @@
         }
       });
     });
+
+    // Sticky CTA: show after user scrolls past hero (~400px)
+    (function () {
+      var bar = document.getElementById('sticky-cta');
+      var heroHeight = 400;
+      function onScroll() {
+        if (window.scrollY > heroHeight) {
+          bar.style.display = 'block';
+          bar.setAttribute('aria-hidden', 'false');
+        } else {
+          bar.style.display = 'none';
+          bar.setAttribute('aria-hidden', 'true');
+        }
+      }
+      window.addEventListener('scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
+      onScroll();
+    })();
   </script>
 </body>
 </html>
