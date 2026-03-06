@@ -616,19 +616,6 @@
     </article>
   </main>
 
-  <!-- Sticky CTA: visible after scroll, drives conversion -->
-  <div id="sticky-cta" class="sticky-cta-bar" aria-hidden="true" style="display: none;">
-    <div class="sticky-cta-inner">
-      <span class="sticky-cta-text">Your companion that remembers you.</span>
-      <a
-        href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=landing&utm_medium=web&utm_campaign=sticky"
-        class="sticky-cta-btn"
-        rel="noopener noreferrer"
-        target="_blank"
-      >Get Mallo</a>
-    </div>
-  </div>
-
   <footer class="site-footer" role="contentinfo">
     <div class="wrap">
       <p class="footer-brand">MalloPal</p>
@@ -664,22 +651,6 @@
       });
     });
 
-    // Sticky CTA: show after user scrolls past hero (~400px)
-    (function () {
-      var bar = document.getElementById('sticky-cta');
-      var heroHeight = 400;
-      function onScroll() {
-        if (window.scrollY > heroHeight) {
-          bar.style.display = 'block';
-          bar.setAttribute('aria-hidden', 'false');
-        } else {
-          bar.style.display = 'none';
-          bar.setAttribute('aria-hidden', 'true');
-        }
-      }
-      window.addEventListener('scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
-      onScroll();
-    })();
   </script>
 </body>
 </html>
