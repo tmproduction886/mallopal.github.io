@@ -112,11 +112,14 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 10px;
-  background:
-    url("assets/app-icon-192.png") center/cover no-repeat,
+  background-image:
+    url("/assets/app-icon-192.png"),
     radial-gradient(circle at 30% 30%, rgba(255, 182, 193, 0.55), transparent 55%),
     radial-gradient(circle at 70% 70%, rgba(139, 111, 71, 0.35), transparent 55%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 224, 213, 0.8));
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 1px solid rgba(212, 196, 176, 0.9);
   box-shadow: 0 6px 16px var(--shadow);
 }
@@ -884,19 +887,6 @@ body {
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.6;
-}
-
-.proof-note {
-  max-width: 760px;
-  margin: 18px auto 0;
-  padding: 12px 14px;
-  border-radius: var(--radius-sm);
-  background: rgba(139, 111, 71, 0.06);
-  border: 1px solid rgba(139, 111, 71, 0.16);
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  text-align: center;
 }
 
 .testimonial-card {
