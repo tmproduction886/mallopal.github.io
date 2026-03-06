@@ -14,7 +14,7 @@ Landing page for the Mallo iOS app. Built for **SEO** and the **ICP** (Ideal Cus
   - **og-image.jpg** – 1200×630 social share image (OG/Twitter). Optimized for fast fetch by crawlers.
   - **app-icon.png** – App icon (1024×1024, from iOS AppIcon). Used as favicon.
   - **app-icon-192.png** – App icon 192×192. Used as Apple touch icon fallback.
-  - **app-store-badge.svg** – “Download on the App Store” badge for the CTA.
+  - **app-store-badge.svg** – Legacy local badge (kept for reference). The site now uses Apple’s official hosted badge via App Store Marketing Tools for pixel-perfect rendering on iOS.
 
 ## Where the app icon appears
 
