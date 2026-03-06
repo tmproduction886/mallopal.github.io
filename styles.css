@@ -72,7 +72,7 @@ body {
 .site-header {
   background: rgba(250, 248, 243, 0.9);
   border-bottom: 1px solid rgba(232, 224, 213, 0.7);
-  padding: 14px 0;
+  padding: 0;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -935,7 +935,9 @@ body {
 /* Download CTA */
 .download {
   padding: 80px 0 88px;
-  background: linear-gradient(180deg, var(--cream) 0%, var(--brown) 35%, var(--brown-dark) 100%);
+  background:
+    radial-gradient(circle at top center, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 243, 0.8) 38%, transparent 70%),
+    linear-gradient(180deg, #f8f4ee 0%, #e9dfd1 45%, #d7c6b3 100%);
   text-align: center;
 }
 
