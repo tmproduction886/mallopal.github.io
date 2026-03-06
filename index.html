@@ -171,7 +171,17 @@
         <span class="logo-mark" aria-hidden="true"></span>
         <span>MalloPal</span>
       </a>
-      <nav class="nav" role="navigation" aria-label="Main">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+      <nav id="main-nav" class="nav" role="navigation" aria-label="Main">
         <a href="#features">Features</a>
         <a href="#who-its-for">Who it’s for</a>
         <a href="#how-it-works">How it works</a>
@@ -650,7 +660,27 @@
         }
       });
     });
+    // Mobile navigation toggle
+    (function () {
+      var header = document.querySelector('.site-header');
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('main-nav');
+      if (!header || !toggle || !nav) return;
 
+      toggle.addEventListener('click', function () {
+        var isOpen = header.classList.toggle('nav-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      // Close menu when a nav link is clicked (helpful on small screens)
+      nav.addEventListener('click', function (event) {
+        var target = event.target;
+        if (target && target.tagName === 'A') {
+          header.classList.remove('nav-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
   </script>
 </body>
 </html>
