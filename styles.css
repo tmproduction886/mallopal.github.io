@@ -955,15 +955,114 @@ body {
   color: var(--white);
 }
 
-.download .section-title {
+.download-card {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 28px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  text-align: left;
+}
+
+@supports ((-webkit-backdrop-filter: blur(14px)) or (backdrop-filter: blur(14px))) {
+  .download-card {
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+}
+
+.download-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.download-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  flex: 0 0 auto;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.download-title {
+  margin: 0 0 6px;
+  font-size: clamp(1.55rem, 3.8vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--white);
-  margin-bottom: 12px;
+  line-height: 1.15;
 }
 
 .download-tagline {
   font-size: 1.12rem;
   opacity: 0.96;
-  margin: 0 0 28px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.55;
+}
+
+.download-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+
+.download-points li {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.download-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.download-secondary {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.download-secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.download-secondary:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 3px;
+}
+
+.download-fineprint {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Download button – Apple-style, fully text-visible */
@@ -1014,6 +1113,26 @@ body {
 .store-button-store {
   font-size: 1.05rem;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .download-card {
+    padding: 22px 20px;
+    text-align: center;
+  }
+
+  .download-brand {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .download-points {
+    grid-template-columns: 1fr;
+  }
+
+  .download-actions {
+    justify-content: center;
+  }
 }
 
 /* Footer */
@@ -1083,7 +1202,7 @@ body {
 
 /* Keep the header flush to the top, but give tool content breathing room */
 .tool-page main.tool-wrap {
-  padding-top: 32px;
+  padding-top: 0;
 }
 
 .tool-breadcrumb {
@@ -1811,7 +1930,7 @@ body {
   }
 
   .tool-page main.tool-wrap {
-    padding-top: 20px;
+    padding-top: 0;
   }
 
   .tool-intro,
