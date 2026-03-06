@@ -87,6 +87,20 @@
       <div id="daily-question-block"></div>
       <div id="daily-response-block" style="display:none;"></div>
       <div id="daily-cta-block" class="daily-cta" style="display:none;"></div>
+
+      <section class="tool-intro" style="margin-top: 28px;">
+        <h2 style="font-size: 1.2rem; margin: 0 0 8px; color: var(--text);">What is a daily check-in question?</h2>
+        <p style="margin: 0; color: var(--text-muted); line-height: 1.7;">
+          A daily check-in question is one gentle prompt to help you pause and notice how you are—without writing a full journal entry.
+          If you want more ideas, here are <a href="../articles/daily-check-in-questions-free.html" style="color: var(--brown-dark); font-weight: 600; text-decoration: none;">15 daily check-in questions (free)</a>.
+        </p>
+        <noscript>
+          <p style="margin: 10px 0 0; color: var(--text-muted); line-height: 1.6;">
+            This page picks today’s question with JavaScript. If you can’t see it, you can still read the full list of questions here:
+            <a href="../articles/daily-check-in-questions-free.html">daily check-in questions (15 examples)</a>.
+          </p>
+        </noscript>
+      </section>
     </article>
   </main>
 
@@ -121,19 +135,30 @@
       var start = new Date(new Date().getFullYear(), 0, 0);
       var diff = (new Date() - start) + (start.getTimezoneOffset() * 60000);
       var dayOfYear = Math.floor(diff / 86400000);
-      var index = dayOfYear % 15;
+      var params = new URLSearchParams(window.location.search);
+      // Allow sharing a specific question by id, while keeping the default
+      // behavior consistent for everyone (day-of-year rotation).
+      var forcedId = params.get('q');
+      var forcedIndex = null;
+      if (forcedId && /^[0-9]{1,2}$/.test(forcedId)) {
+        var n = parseInt(forcedId, 10);
+        if (n >= 1 && n <= 15) forcedIndex = n - 1;
+      }
+      var index = forcedIndex != null ? forcedIndex : (dayOfYear % 15);
 
       fetch('daily-check-in-questions.json').then(function(r) { return r.json(); }).then(function(d) {
         var q = d.questions[index];
         if (!q) q = d.questions[0];
         var shareText = q.question.length > 160 ? q.question.slice(0, 157) + '…' : q.question;
-        var pageUrl = 'https://mallopal.com/tools/daily.html';
-        var shareUrlTwitter = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText + " — Today's one question from Mallo. ") + '&url=' + encodeURIComponent(pageUrl);
-        var shareUrlLinkedIn = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(pageUrl);
+        var baseUrl = 'https://mallopal.com/tools/daily.html';
+        var shareUrl = baseUrl + '?q=' + encodeURIComponent(q.id);
+        var shareUrlTwitter = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText + " — What's your answer?") + '&url=' + encodeURIComponent(shareUrl);
+        var shareUrlLinkedIn = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
         document.getElementById('daily-question-block').innerHTML =
           '<div class="daily-q" role="heading" aria-level="2">' + escapeHtml(q.question) + '</div>' +
           '<div class="daily-q-actions">' +
           '<button type="button" class="btn btn-primary" id="show-response">See a thought</button> ' +
+          '<button type="button" class="btn btn-secondary daily-share" id="copy-question" aria-label="Copy question text">Copy question</button> ' +
           '<button type="button" class="btn btn-secondary daily-share" id="copy-link" aria-label="Copy link">Copy link</button> ' +
           '<a href="' + shareUrlTwitter + '" class="btn btn-secondary daily-share" target="_blank" rel="noopener" aria-label="Share on X">Share on X</a> ' +
           '<a href="' + shareUrlLinkedIn + '" class="btn btn-secondary daily-share" target="_blank" rel="noopener" aria-label="Share on LinkedIn">Share on LinkedIn</a>' +
@@ -146,9 +171,18 @@
           document.getElementById('daily-response-block').style.display = 'block';
           document.getElementById('daily-cta-block').style.display = 'block';
         });
+        document.getElementById('copy-question').addEventListener('click', function() {
+          var self = this;
+          (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(q.question) : Promise.reject())
+            .then(function() {
+              self.textContent = 'Copied!';
+              if (typeof gtag === 'function') gtag('event', 'daily_copy_question', { event_category: 'share', event_label: 'tool_daily' });
+            })
+            .catch(function() { self.textContent = 'Copy failed'; });
+        });
         document.getElementById('copy-link').addEventListener('click', function() {
           var self = this;
-          (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(pageUrl) : Promise.reject())
+          (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(shareUrl) : Promise.reject())
             .then(function() {
               self.textContent = 'Copied!';
               if (typeof gtag === 'function') gtag('event', 'share_copy', { event_category: 'share', event_label: 'tool_daily' });

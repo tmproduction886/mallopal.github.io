@@ -90,6 +90,27 @@
         </p>
       </header>
 
+      <section class="weekly-section" aria-labelledby="w0" style="margin-top: 22px;">
+        <h2 id="w0" class="weekly-h2">Quick weekly recap template (copy/paste)</h2>
+        <p class="weekly-muted">
+          Want a simple weekly recap without tools? Copy/paste this anywhere.
+          Or read a full guide here: <a href="../articles/weekly-recap-template-free.html" rel="noopener">weekly recap template</a>.
+        </p>
+        <details class="weekly-details" open>
+          <summary>Show the template</summary>
+          <pre class="weekly-pre" id="weekly-template">What mattered this week:
+[2–4 sentences. Specific. Concrete. No hype.]
+
+A gentle thread for next week:
+1) [One low-pressure question I can come back to.]
+2) [One small thing that would make next week easier.]</pre>
+        </details>
+        <div class="weekly-actions">
+          <button type="button" class="btn btn-secondary" id="weekly-copy-template">Copy template</button>
+        </div>
+        <p class="weekly-small" id="weekly-template-status" aria-live="polite"></p>
+      </section>
+
       <section class="weekly-section" aria-labelledby="w1" style="margin-top: 26px;">
         <h2 id="w1" class="weekly-h2">1) Paste a few moments from your week</h2>
         <p class="weekly-muted">3–10 bullets is perfect. Small details welcome.</p>
@@ -396,6 +417,22 @@
         previewEl.textContent = buildPrompt();
         setShareLinks();
         drawCard();
+
+        // Copy weekly recap template
+        var tplBtn = document.getElementById('weekly-copy-template');
+        var tplPre = document.getElementById('weekly-template');
+        var tplStatus = document.getElementById('weekly-template-status');
+        if (tplBtn && tplPre) {
+          tplBtn.addEventListener('click', function() {
+            var text = (tplPre.textContent || '').trim();
+            copyText(text).then(function() {
+              if (tplStatus) tplStatus.textContent = 'Template copied.';
+              if (typeof gtag === 'function') gtag('event', 'weekly_template_copy', { event_category: 'tools', event_label: 'weekly' });
+            }).catch(function() {
+              if (tplStatus) tplStatus.textContent = 'Couldn’t copy automatically. Select and copy from the template box.';
+            });
+          });
+        }
 
         // Keep preview updated
         [notesEl, seg.living, seg.moved, seg.remote, seg.stress].forEach(function(el) {
