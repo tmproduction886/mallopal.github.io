@@ -107,10 +107,13 @@ body {
 }
 
 .logo-mark {
+  display: inline-block;
+  flex: 0 0 auto;
   width: 28px;
   height: 28px;
   border-radius: 10px;
   background:
+    url("assets/app-icon-192.png") center/cover no-repeat,
     radial-gradient(circle at 30% 30%, rgba(255, 182, 193, 0.55), transparent 55%),
     radial-gradient(circle at 70% 70%, rgba(139, 111, 71, 0.35), transparent 55%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(232, 224, 213, 0.8));
