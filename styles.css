@@ -212,6 +212,21 @@ body {
   .sticky-cta-text { width: 100%; font-size: 0.9rem; }
 }
 
+/* On very small screens or low-height viewports, hide sticky bar
+   so it does not cover important content. */
+@media (max-width: 480px), (max-height: 600px) {
+  .sticky-cta-bar {
+    display: none !important;
+  }
+}
+
+/* Prevent sticky header from covering anchors when jumping via hash links */
+section[id],
+main[id],
+article[id] {
+  scroll-margin-top: 80px;
+}
+
 /* Hero – split layout: app visual + copy */
 .hero {
   background: radial-gradient(circle at top right, rgba(139, 111, 71, 0.08), transparent 55%),
