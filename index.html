@@ -326,8 +326,8 @@
         </div>
       </section>
 
-      <!-- Hacker News specific strip (only visible for utm_source=hn via body.is-hn-visitor) -->
-      <section class="hn-hacker-news-strip" aria-label="For Hacker News readers">
+      <!-- Hacker News specific strip (only visible for utm_source=hn; JS will unset inline display:none) -->
+      <section class="hn-hacker-news-strip" aria-label="For Hacker News readers" style="display: none;">
         <div class="wrap">
           <p class="hn-hn-label">For Hacker News</p>
           <p class="hn-strip-title">A quick view on stack, memory, and boundaries</p>
@@ -716,6 +716,12 @@
         badges[0].textContent = 'Built with Flutter + Gemini';
         badges[1].textContent = 'Proactive check-ins, long-term memory';
         badges[2].textContent = 'Not therapy · Clear boundaries';
+      }
+
+      // Explicitly reveal the HN strip even if CSS hasn’t loaded yet.
+      var hnStrip = document.querySelector('.hn-hacker-news-strip');
+      if (hnStrip) {
+        hnStrip.style.display = 'block';
       }
     }
 
