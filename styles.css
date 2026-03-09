@@ -907,6 +907,63 @@ article[id] {
   font-weight: 700;
 }
 
+/* HN-only technical/ethics strip – only shown when body.has .is-hn-visitor */
+.hn-hacker-news-strip {
+  display: none;
+  padding: 40px 0 16px;
+  background: #fdfbf7;
+  border-top: 1px solid rgba(232, 224, 213, 0.9);
+  border-bottom: 1px solid rgba(232, 224, 213, 0.9);
+}
+
+body.is-hn-visitor .hn-hacker-news-strip {
+  display: block;
+}
+
+.hn-hn-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown-darker);
+  margin: 0 0 8px;
+}
+
+.hn-strip-title {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hn-strip-lead {
+  margin: 0 0 14px;
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+.hn-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.hn-strip-card {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 14px 14px;
+  border: 1px solid var(--cream-dark);
+  box-shadow: 0 3px 10px var(--shadow);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.hn-strip-card strong {
+  color: var(--text);
+}
+
 /* “Proof” cards (non-testimonial social proof, no quotes) */
 .proof-grid {
   display: grid;

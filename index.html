@@ -326,6 +326,31 @@
         </div>
       </section>
 
+      <!-- Hacker News specific strip (only visible for utm_source=hn via body.is-hn-visitor) -->
+      <section class="hn-hacker-news-strip" aria-label="For Hacker News readers">
+        <div class="wrap">
+          <p class="hn-hn-label">For Hacker News</p>
+          <p class="hn-strip-title">A quick view on stack, memory, and boundaries</p>
+          <p class="hn-strip-lead">
+            You probably care about what’s actually under the hood and where the ethical lines are. Here’s the short version—details are inside the app and on the privacy page.
+          </p>
+          <div class="hn-strip-grid" role="list">
+            <article class="hn-strip-card" role="listitem">
+              <strong>Stack & architecture</strong><br>
+              Flutter client targeting iOS, Gemini-based backend, local database for conversations/memories/streaks, plus a proactive engagement worker for notifications (daily greetings, streak rescue, emotion follow-ups).
+            </article>
+            <article class="hn-strip-card" role="listitem">
+              <strong>Memory & behavior</strong><br>
+              Chats are stored so Mallo can extract long-term memories (people, events, ongoing threads) and reuse them in prompts, so recaps and check-ins build on previous context instead of feeling like a fresh ChatGPT tab.
+            </article>
+            <article class="hn-strip-card" role="listitem">
+              <strong>Privacy & boundaries</strong><br>
+              Not a therapist, no clinical claims, no selling conversation data to advertisers. Tracking for ads respects iOS ATT; if you say no, ad SDKs effectively stay off. The app copy is explicit about limits and crisis resources.
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- How it works (fast, scannable like Wellspoken: 3-step cards) -->
       <section id="how-it-works" class="how-cards" aria-labelledby="how-cards-heading">
         <div class="wrap">
