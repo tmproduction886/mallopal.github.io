@@ -649,17 +649,77 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Detect Hacker News traffic via UTM parameters.
+    var searchParams = new URLSearchParams(window.location.search || '');
+    var isHnVisitor = searchParams.get('utm_source') === 'hn';
+
+    if (isHnVisitor && typeof gtag === 'function') {
+      // Explicit HN page-view event for analytics.
+      gtag('event', 'hn_page_view', {
+        event_category: 'traffic',
+        event_label: 'hn_landing',
+        utm_source: searchParams.get('utm_source') || null,
+        utm_medium: searchParams.get('utm_medium') || null,
+        utm_campaign: searchParams.get('utm_campaign') || null,
+        utm_content: searchParams.get('utm_content') || null
+      });
+    }
+
+    // If this is HN traffic, adapt the hero copy to the HN-specific positioning.
+    if (isHnVisitor) {
+      document.body.classList.add('is-hn-visitor');
+
+      var heroKicker = document.querySelector('.hero-kicker');
+      if (heroKicker) {
+        heroKicker.textContent = 'Hello, Hacker News';
+      }
+
+      var heroHeading = document.getElementById('hero-heading');
+      if (heroHeading) {
+        heroHeading.textContent = 'An AI companion that remembers you and checks in every day.';
+      }
+
+      var heroLead = document.querySelector('.hero-lead');
+      if (heroLead) {
+        heroLead.textContent =
+          'Mallo is an iOS AI companion for daily emotional check-ins. It remembers your story, reaches out proactively, and helps you feel a bit less alone—without pretending to be a therapist.';
+      }
+
+      // Make the badges more HN-relevant (clarity, ethics, tech).
+      var badges = document.querySelectorAll('.hero-badges .badge');
+      if (badges && badges.length >= 3) {
+        badges[0].textContent = 'Built with Flutter + Gemini';
+        badges[1].textContent = 'Proactive check-ins, long-term memory';
+        badges[2].textContent = 'Not therapy · Clear boundaries';
+      }
+    }
+
     // Track App Store link clicks as conversion (use this event in Google Ads)
     document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (el) {
       el.addEventListener('click', function () {
         if (typeof gtag === 'function') {
-          gtag('event', 'click_to_app_store', {
+          var baseEvent = {
             event_category: 'engagement',
             event_label: 'landing_page'
-          });
+          };
+
+          gtag('event', 'click_to_app_store', baseEvent);
+
+          // Additional explicit event for Hacker News visitors.
+          if (isHnVisitor) {
+            gtag('event', 'hn_click_app_store', {
+              event_category: 'engagement',
+              event_label: 'hn_landing',
+              utm_source: searchParams.get('utm_source') || null,
+              utm_medium: searchParams.get('utm_medium') || null,
+              utm_campaign: searchParams.get('utm_campaign') || null,
+              utm_content: searchParams.get('utm_content') || null
+            });
+          }
         }
       });
     });
+
     // Mobile navigation toggle
     (function () {
       var header = document.querySelector('.site-header');
