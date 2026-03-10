@@ -373,6 +373,43 @@
         </div>
       </section>
 
+      <!-- Product Hunt specific strip (only visible for utm_source=producthunt|product_hunt|ph; JS will unset inline display:none) -->
+      <section class="ph-product-hunt-strip" aria-label="For Product Hunt visitors" style="display: none;">
+        <div class="wrap">
+          <p class="ph-label">Hello, Product Hunt</p>
+          <p class="ph-strip-title">Meet Mallo — an AI companion that remembers you and checks in daily</p>
+          <p class="ph-strip-lead">
+            If you’re here to quickly understand what makes this different (and where the boundaries are), here’s the short version.
+          </p>
+          <div class="ph-strip-grid" role="list">
+            <article class="ph-strip-card" role="listitem">
+              <strong>What it does</strong><br>
+              Daily emotional check-ins with an AI companion that remembers your ongoing threads, then reflects them back via weekly recaps and future chats.
+            </article>
+            <article class="ph-strip-card" role="listitem">
+              <strong>Why it’s different</strong><br>
+              Proactive notifications (greetings, follow-ups, streak rescue) + a memory layer, so it feels like a relationship over time—not a blank chatbot tab.
+            </article>
+            <article class="ph-strip-card" role="listitem">
+              <strong>Boundaries & privacy</strong><br>
+              Not therapy and no clinical claims. Conversation data isn’t sold to advertisers. Ad tracking SDKs respect iOS ATT; if you say no, they effectively stay off.
+            </article>
+          </div>
+          <div class="ph-strip-actions" aria-label="Next steps">
+            <a
+              href="https://apps.apple.com/us/app/mallo-ai-companion-remembers/id6757778766?utm_source=producthunt&utm_medium=launch&utm_campaign=ph_strip"
+              class="btn btn-primary"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Get Mallo on iPhone
+            </a>
+            <a href="tools/quiz.html" class="btn btn-secondary">Take the 1‑minute quiz</a>
+            <a href="privacy/" class="btn btn-secondary">Read privacy</a>
+          </div>
+        </div>
+      </section>
+
       <!-- How it works – keyword-rich H2 for semantic SEO -->
       <section id="how-it-works" class="how-cards" aria-labelledby="how-cards-heading">
         <div class="wrap">
@@ -724,12 +761,25 @@
     // Detect Hacker News traffic via UTM parameters.
     var searchParams = new URLSearchParams(window.location.search || '');
     var isHnVisitor = searchParams.get('utm_source') === 'hn';
+    var utmSource = (searchParams.get('utm_source') || '').toLowerCase();
+    var isPhVisitor = utmSource === 'producthunt' || utmSource === 'product_hunt' || utmSource === 'product-hunt' || utmSource === 'ph';
 
     if (isHnVisitor && typeof gtag === 'function') {
       // Explicit HN page-view event for analytics.
       gtag('event', 'hn_page_view', {
         event_category: 'traffic',
         event_label: 'hn_landing',
+        utm_source: searchParams.get('utm_source') || null,
+        utm_medium: searchParams.get('utm_medium') || null,
+        utm_campaign: searchParams.get('utm_campaign') || null,
+        utm_content: searchParams.get('utm_content') || null
+      });
+    }
+
+    if (isPhVisitor && typeof gtag === 'function') {
+      gtag('event', 'ph_page_view', {
+        event_category: 'traffic',
+        event_label: 'ph_landing',
         utm_source: searchParams.get('utm_source') || null,
         utm_medium: searchParams.get('utm_medium') || null,
         utm_campaign: searchParams.get('utm_campaign') || null,
@@ -772,6 +822,40 @@
       }
     }
 
+    // If this is Product Hunt traffic, adapt the hero copy and show the PH strip.
+    if (isPhVisitor) {
+      document.body.classList.add('is-ph-visitor');
+
+      var heroKickerPh = document.querySelector('.hero-kicker');
+      if (heroKickerPh) {
+        heroKickerPh.textContent = 'Hello, Product Hunt';
+      }
+
+      var heroHeadingPh = document.getElementById('hero-heading');
+      if (heroHeadingPh) {
+        heroHeadingPh.textContent = 'An AI companion that remembers you and checks in every day.';
+      }
+
+      var heroLeadPh = document.querySelector('.hero-lead');
+      if (heroLeadPh) {
+        heroLeadPh.textContent =
+          'Mallo is an iOS AI companion for daily emotional check-ins. It remembers your story, reaches out proactively, and helps you feel a bit less alone—without pretending to be a therapist.';
+      }
+
+      // Make the badges more PH-relevant (value prop, clarity, iOS).
+      var badgesPh = document.querySelectorAll('.hero-badges .badge');
+      if (badgesPh && badgesPh.length >= 3) {
+        badgesPh[0].textContent = '2–5 minute daily check-in';
+        badgesPh[1].textContent = 'Memory-first + proactive nudges';
+        badgesPh[2].textContent = 'Not therapy · Clear boundaries';
+      }
+
+      var phStrip = document.querySelector('.ph-product-hunt-strip');
+      if (phStrip) {
+        phStrip.style.display = 'block';
+      }
+    }
+
     // Track App Store link clicks as conversion (use this event in Google Ads)
     document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (el) {
       el.addEventListener('click', function () {
@@ -788,6 +872,18 @@
             gtag('event', 'hn_click_app_store', {
               event_category: 'engagement',
               event_label: 'hn_landing',
+              utm_source: searchParams.get('utm_source') || null,
+              utm_medium: searchParams.get('utm_medium') || null,
+              utm_campaign: searchParams.get('utm_campaign') || null,
+              utm_content: searchParams.get('utm_content') || null
+            });
+          }
+
+          // Additional explicit event for Product Hunt visitors.
+          if (isPhVisitor) {
+            gtag('event', 'ph_click_app_store', {
+              event_category: 'engagement',
+              event_label: 'ph_landing',
               utm_source: searchParams.get('utm_source') || null,
               utm_medium: searchParams.get('utm_medium') || null,
               utm_campaign: searchParams.get('utm_campaign') || null,

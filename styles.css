@@ -964,6 +964,82 @@ body.is-hn-visitor .hn-hacker-news-strip {
   color: var(--text);
 }
 
+/* Product Hunt strip – only shown when body.has .is-ph-visitor */
+.ph-product-hunt-strip {
+  display: none;
+  padding: 40px 0 22px;
+  background: #fdfbf7;
+  border-top: 1px solid rgba(232, 224, 213, 0.9);
+  border-bottom: 1px solid rgba(232, 224, 213, 0.9);
+}
+
+body.is-ph-visitor .ph-product-hunt-strip {
+  display: block;
+}
+
+.ph-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown-darker);
+  margin: 0 0 8px;
+}
+
+.ph-strip-title {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.ph-strip-lead {
+  margin: 0 0 14px;
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  max-width: 720px;
+}
+
+.ph-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.ph-strip-card {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 14px 14px;
+  border: 1px solid var(--cream-dark);
+  box-shadow: 0 3px 10px var(--shadow);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.ph-strip-card strong {
+  color: var(--text);
+}
+
+.ph-strip-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.ph-strip-actions .btn {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .ph-strip-actions {
+    justify-content: center;
+  }
+}
+
 /* “Proof” cards (non-testimonial social proof, no quotes) */
 .proof-grid {
   display: grid;
