@@ -1,0 +1,332 @@
+Apple Search Ads (ASA) Setup Playbook — US/UK/CA — Max CPA $5 — No CPP (yet)
+Mallo / MalloPal
+Last updated: 2026-03-06
+
+Goal
+- Primary: Maximize NEW iOS installs while keeping Cost per Acquisition (CPA) <= $5.
+- Secondary: Learn winning search terms fast, then scale only what hits CPA.
+
+Assumptions / constraints
+- Markets: United States, United Kingdom, Canada.
+- No Custom Product Pages (CPP) yet (we’ll use the default product page).
+- Product positioning: warm AI companion; proactive check-ins; persistent memory; weekly recap.
+- Avoid positioning as therapy, dating, romance, roleplay, or clinical support.
+
+What “success” looks like (minimum viable)
+- Brand campaign: CPA <= $2, TTR >= 8%.
+- Generic Core: CPA <= $5, with at least 10–30 winning exact-match terms per market by day 14.
+- Discovery: produces 5–15 new converting terms per market by day 14.
+
+============================================================
+1) Account structure (best-practice, simple, scalable)
+============================================================
+Create the SAME campaign structure per country.
+
+Country campaign naming convention
+- [US] | Brand | Exact
+- [US] | Generic Core | Exact+Broad
+- [US] | Competitor | Exact
+- [US] | Discovery | Search Match + Broad
+Repeat for UK, CA:
+- [UK] | ...
+- [CA] | ...
+
+Why this structure works
+- Brand defends your name cheaply.
+- Generic Core is your main growth engine (high intent).
+- Competitor is optional, tightly controlled to avoid wasting CPA.
+- Discovery is a “keyword mining machine” (small budget; converts -> move to Core exact).
+
+============================================================
+2) Budget plan (starting point for Max CPA $5)
+============================================================
+If you have a fixed daily budget, use the percentages below per country.
+If you don’t, start with these absolute numbers (per country) and adjust after day 3.
+
+Recommended starting daily budgets (per country)
+- US: $30/day
+- UK: $15/day
+- CA: $15/day
+
+Budget allocation within each country
+- Brand: 10% (US $3 / UK $1.5 / CA $1.5)
+- Generic Core: 70% (US $21 / UK $10.5 / CA $10.5)
+- Competitor: 10% (US $3 / UK $1.5 / CA $1.5)
+- Discovery: 10% (US $3 / UK $1.5 / CA $1.5)
+
+If you are budget-constrained
+- Keep Brand + Generic Core + Discovery.
+- Pause Competitor until Core has stable winners under $5.
+
+============================================================
+3) Bid plan (starting CPT bids, tuned for Max CPA $5)
+============================================================
+Key idea
+- Without CPP, you need tighter control: exact-match terms should carry the spend.
+- Start conservative; raise bids ONLY on terms meeting CPA and showing conversion momentum.
+
+Set your “stop-loss” threshold
+- If a keyword spends 1.5x your target CPA ($7.50) with 0 installs, it is a candidate to pause or negate.
+- If a search term spends $10 with 0 installs, negate it (unless it’s extremely relevant and early).
+
+Starting bids (per match type)
+- Brand Exact: higher bid to win impression share; usually still cheap.
+  - US: $1.20
+  - UK: £0.85
+  - CA: C$1.25
+
+- Generic Core Exact: moderate
+  - US: $0.90
+  - UK: £0.65
+  - CA: C$0.95
+
+- Generic Core Broad: -25% vs Exact
+  - US: $0.70
+  - UK: £0.50
+  - CA: C$0.75
+
+- Discovery Search Match: lowest
+  - US: $0.45
+  - UK: £0.35
+  - CA: C$0.50
+
+- Competitor Exact: low-to-moderate; watch CPA hard
+  - US: $0.60
+  - UK: £0.45
+  - CA: C$0.65
+
+Bid adjustment rules (simple)
+- If CPA <= $4 AND >= 3 installs in last 7 days -> increase bid +10% to +20%.
+- If CPA between $4–$5 with >= 3 installs -> keep bid; optimize negatives + creatives later.
+- If CPA > $5 with >= 2 installs -> reduce bid -15% to -25%.
+- If 0 installs and spend >= $7.50 -> pause keyword OR add negative exact for that search term.
+
+============================================================
+4) Ad groups (within each campaign)
+============================================================
+4.1 Brand campaign (one ad group)
+Ad group: Brand | Exact
+Keywords (Exact)
+- mallo
+- mallopal
+- mallo ai
+- mallo companion
+- mallo app
+Add common misspellings you see in Search Terms (after day 3).
+
+Negatives
+- Usually none. If unrelated meanings appear, negate them.
+
+4.2 Generic Core campaign (3 ad groups, split by intent)
+Ad group A: AI Companion | Exact+Broad
+Ad group B: Check-in + Journal | Exact+Broad
+Ad group C: Weekly Recap + Reflection | Exact+Broad
+
+Why split by intent
+- Different terms behave very differently; splitting lets you keep winners under $5.
+
+4.3 Competitor campaign (1–2 ad groups)
+Ad group: Competitor | Exact
+Rules
+- Only exact match, limited list (10–30), strict CPA.
+- Pause fast if CPA exceeds $5.
+
+4.4 Discovery campaign (2 ad groups)
+Ad group: Search Match
+Ad group: Broad (low bid)
+Rules
+- Keep spend small; goal is to find converting search terms to migrate to Generic Core Exact.
+
+============================================================
+5) Keyword packs (starter lists you can paste in)
+============================================================
+Important
+- Start with fewer, higher-intent terms. You can always add more after day 3.
+- Use English in all 3 markets.
+
+5.1 Generic Core — AI Companion intent
+Exact (start here)
+- ai companion
+- ai companion app
+- companion app
+- ai friend
+- virtual friend
+- chat companion
+- friend app
+- companion for adults
+Broad (lower bid)
+- ai companion app
+- ai friend app
+- companion chat
+
+5.2 Generic Core — Check-in + Journal intent
+Exact
+- daily check in
+- daily check-in
+- daily reflection
+- daily journal
+- journaling
+- journal prompts
+- reflection questions
+- self reflection
+- mindfulness journal
+- mood check in
+Broad
+- daily check in app
+- journal prompts daily
+- reflection prompts
+
+5.3 Generic Core — Weekly Recap + Reflection intent (your strongest “tool-aligned” funnel)
+Exact
+- weekly recap
+- weekly reflection
+- weekly review
+- weekly check in
+- weekly journal
+- weekly journal prompts
+- weekly planner reflection
+- what mattered this week
+Broad
+- weekly reflection prompts
+- weekly recap template
+
+5.4 Loneliness / living alone (optional, high volume but can be messy)
+Add only after Core winners exist.
+Exact
+- loneliness
+- living alone
+- alone
+- work from home
+- remote work
+Notes
+- These can bring low-intent traffic. If CPA rises, pause them quickly.
+
+5.5 Competitors (placeholder approach)
+Because competitor lists depend on your category landscape, start with 10–15 you know are relevant.
+Rules
+- If CPA > $5 after 5–10 installs OR if spend is high with low CVR, pause.
+
+============================================================
+6) Negative keyword list (protect CPA + reduce risky/irrelevant intent)
+============================================================
+Add this shared negative list to Generic + Discovery (not necessarily Brand).
+
+Negative Exact (start list)
+- dating
+- tinder
+- bumble
+- hinge
+- romance
+- romantic
+- girlfriend
+- boyfriend
+- wife
+- husband
+- roleplay
+- role play
+- nsfw
+- porn
+- sex
+- erotic
+- anime
+- waifu
+- therapy
+- therapist
+- counseling
+- psychiatrist
+- diagnosis
+- medication
+- suicide
+- self harm
+- crisis
+- hotline
+- teens
+- kids
+- for kids
+- minecraft
+
+Notes
+- Some of these are “safety” negatives (avoid mismatched/clinical/crisis intent).
+- If you intentionally want “mental health app” traffic later, do it with CPP + careful copy; not at max CPA $5 without CPP.
+
+============================================================
+7) Creatives (no CPP): what you CAN do now
+============================================================
+Even without CPP, you can still improve relevance:
+- Ensure your default App Store page first screenshots and subtitle clearly match:
+  - “Daily check-ins”
+  - “Remembers you / memory”
+  - “Weekly recap”
+
+If your App Store page currently doesn’t highlight weekly recap strongly, do NOT over-invest in weekly keywords until it does.
+However, your website already supports “weekly recap generator”; you can use that in external SEO, but ASA sends users to App Store directly.
+
+============================================================
+8) Operational cadence (how to run this daily)
+============================================================
+Day 0 (setup day)
+- Launch US campaigns first, then clone to UK and CA (same structure).
+- Add negative list to Generic + Discovery from day 0.
+- Set budgets and starting bids as above.
+
+Days 1–3 (stop leaks, get signal)
+Daily (10 minutes per country):
+1) Open Search Terms report (Discovery + Broad ad groups first).
+2) For any irrelevant term: add Negative Exact immediately.
+3) For any term with spend >= $7.50 and 0 installs: pause keyword or negate that term.
+4) Identify any term that got installs with CPA <= $5.
+   - Add that term as Exact in Generic Core (right intent ad group).
+   - Add Negative Exact for that term in Discovery/Search Match to force routing to Exact.
+
+Days 4–7 (build the winner set)
+Every 48 hours:
+- Move all converting search terms into Generic Core Exact.
+- Lower bids on Broad/Search Match if they exceed CPA.
+- Increase bids +10–20% on Exact terms with CPA <= $4 (and >= 3 installs/7d).
+
+Days 8–14 (scale safely)
+Weekly:
+- Prune losers: pause exact keywords with CPA > $5 consistently.
+- Expand winners: add close variants (plural/singular; “check-in” vs “check in”).
+- Consider adding the optional “loneliness/living alone” set with low bids; pause fast if it hurts CPA.
+
+============================================================
+9) When to add Custom Product Pages (CPP) (your biggest next lever)
+============================================================
+You said “not custom page yet,” but here’s the trigger:
+- Once you find 15–30 exact terms converting in Generic Core, create 3 CPP and map:
+  - AI companion terms -> CPP emphasizing “checks in + remembers”
+  - Check-in/journal terms -> CPP emphasizing “daily question ritual”
+  - Weekly recap/reflection terms -> CPP emphasizing “weekly recap”
+
+Expected impact
+- CPP typically increases CVR, which lowers CPA, which lets you bid higher and get more volume under the same CPA target.
+
+============================================================
+10) Quick troubleshooting
+============================================================
+Problem: CPA too high across the board
+- Reduce bids 15–25% on Generic Broad + Search Match immediately.
+- Tighten negatives (especially “dating/roleplay/therapy” terms).
+- Shift spend to Exact terms only until CPA stabilizes.
+
+Problem: Lots of taps, low conversions (low CVR)
+- Your default App Store page may not match the intent of the keywords.
+- Narrow keyword set to “companion/check-in/weekly recap” that matches your first screenshots.
+
+Problem: Not enough volume
+- Raise bids on the best exact terms (+10–20%).
+- Add more broad variants, but keep bids low and negatives strong.
+
+Problem: UK/CA not spending
+- Increase budgets slightly and raise Exact bids by +10–15% only on terms already converting in US.
+
+============================================================
+11) What to report weekly (simple dashboard)
+============================================================
+Per country:
+- Spend, New Downloads, CPA (New Downloads)
+- Top 10 exact terms by installs + CPA
+- Top 10 wasted search terms (spend high, 0 installs) -> added as negatives
+
+End of file

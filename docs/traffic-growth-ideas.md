@@ -71,6 +71,32 @@ Actionable ideas to grow **qualified traffic** (people who match the ICP: living
 
 ## 5. Technical & conversion
 
+### Landing page split testing (A/B) for best iOS traffic
+
+**When it’s worth it:** Once you have steady traffic (organic or paid), high-quality split tests are one of the best ways to improve conversion to App Store clicks and installs. Don’t split-test everything at once—run one clear test at a time.
+
+**What to test (high impact):**
+- **Hero headline + lead** – e.g. benefit-focused vs “remembers you” vs “checks in so you’re not alone.” Use a custom dimension in GA4 so you can segment conversions by variant.
+- **Primary CTA copy** – “Get Mallo on iPhone” vs “Try Mallo free” vs “Download free.” Track `click_to_app_store` by variant.
+- **Entry point** – Send paid/organic traffic to landing vs quiz vs guide and compare install rate (UTMs + GA4 already support this; formalize as an experiment).
+- **Sticky CTA** – Test showing a small “Get Mallo” bar on scroll vs no sticky (see “Conversion on the page” below).
+
+**Quality bar:**
+- **One test at a time** so you know what moved the needle.
+- **Primary metric:** App Store link clicks (you already track this); ideally also installs via App Store Connect / attribution.
+- **Run to significance** – use a calculator or GA4’s experiment duration guidance; don’t stop early.
+- **SEO care:** If you test the H1 or meta, prefer server-side or edge-based tests so crawlers see one canonical version; otherwise test only below-the-fold or CTA copy.
+
+**Implementation options:**
+- **GA4 + cookie-based variant:** Small script assigns a variant on first visit (e.g. 50/50), sets a cookie, and sends `gtag('set', 'user_properties', { experiment_variant: 'A' | 'B' })`. Swap hero/CTA in JS. Simple but can cause a brief flash; acceptable for CTA-only tests.
+- **Google Optimize (deprecated)** – not recommended for new setup.
+- **Server-side or edge (e.g. Vercel Edge, Cloudflare Workers):** Assign variant by hashed user ID or random, serve the right HTML. No flash, SEO-safe. Best for headline tests.
+- **Third-party:** Optimizely, VWO, or similar if you want a UI and built-in stats.
+
+Start with one CTA or one hero copy test; use your existing `click_to_app_store` event and a `user_properties` (or event param) for the variant so you can compare conversion rate by variant in GA4.
+
+---
+
 ### Site health
 - **Core Web Vitals** – Keep LCP, FID, CLS good (you have preload for hero image; watch for heavy scripts).
 - **Mobile-first** – Tools and articles already responsive; test on real devices.
