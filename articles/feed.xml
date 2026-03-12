@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mallo – Articles &amp; Guides | MalloPal</title>
+    <link>https://mallopal.com/articles/</link>
+    <description>Guides and articles from Mallo, the AI companion app that remembers you: living alone, remote work, new city, loneliness, daily check-in. No signup. Download Mallo for iPhone.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mallopal.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Best AI companion app that remembers you (2026)</title>
+      <link>https://mallopal.com/articles/best-ai-companion-app.html</link>
+      <description>What to look for: persistent memory, daily check-ins, weekly recap. For living alone, remote work, new cities. How Mallo fits.</description>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://mallopal.com/articles/best-ai-companion-app.html</guid>
+    </item>
+    <item>
+      <title>Companion app for living alone – why it helps</title>
+      <link>https://mallopal.com/articles/companion-app-for-living-alone.html</link>
+      <description>Why a companion app helps when you live alone: daily check-ins, memory, a small ritual. What to look for. Mallo is built for this.</description>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://mallopal.com/articles/companion-app-for-living-alone.html</guid>
+    </item>
+    <item>
+      <title>Is an AI companion right for me? Honest answer &amp; quiz</title>
+      <link>https://mallopal.com/articles/is-ai-companion-right-for-me.html</link>
+      <description>Short guide plus free 5-question quiz. For anyone wondering if a daily AI companion fits their life. No signup.</description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://mallopal.com/articles/is-ai-companion-right-for-me.html</guid>
+    </item>
+    <item>
+      <title>Loneliness, remote work, and AI companions</title>
+      <link>https://mallopal.com/articles/loneliness-remote-work-ai-companions.html</link>
+      <description>Why loneliness sneaks up on people who live alone or work remotely—and how small rituals, including an AI that remembers you, can help.</description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://mallopal.com/articles/loneliness-remote-work-ai-companions.html</guid>
+    </item>
+    <item>
+      <title>Holiday loneliness: when you're alone or far from family</title>
+      <link>https://mallopal.com/articles/holiday-loneliness-when-youre-alone-or-far-from-family.html</link>
+      <description>Thanksgiving, Christmas, New Year—when the season feels heavy. Practical, human advice without toxic positivity.</description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://mallopal.com/articles/holiday-loneliness-when-youre-alone-or-far-from-family.html</guid>
+    </item>
+    <item>
+      <title>First week in a new city: by region (US, UK, abroad)</title>
+      <link>https://mallopal.com/articles/first-week-new-city-by-region.html</link>
+      <description>What actually changes when you move in the US, UK, or elsewhere. Paperwork, norms, and one thing that helps everywhere.</description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://mallopal.com/articles/first-week-new-city-by-region.html</guid>
+    </item>
+  </channel>
+</rss>
