@@ -4,7 +4,7 @@ Landing page for the Mallo iOS app. Built for **SEO** and the **ICP** (Ideal Cus
 
 ## Contents
 
-- **index.html** – Single-page site with semantic HTML, JSON-LD (WebPage, WebSite, SoftwareApplication, FAQPage), Open Graph, and keyword-rich copy.
+- **index.html** – Single-page site with semantic HTML, JSON-LD (WebPage, WebSite, SoftwareApplication, HowTo, FAQPage), Open Graph, Smart App Banner, sticky CTA, and keyword-rich copy for SEO and iOS app traffic.
 - **styles.css** – Mallo brand colors (cream, brown, accent), hero with app visual, responsive layout.
 - **privacy/index.html** – Privacy Policy page. Canonical: https://mallopal.com/privacy/
 - **terms/index.html** – Terms of Service page. Canonical: https://mallopal.com/terms/
